@@ -1,0 +1,13 @@
+git config --global user.email “33410285@qq.com”
+
+git config --global user.name “abc62201”
+在本地创建ssh key
+ssh-keygen -t rsa -C "33410285@qq.com"
+
+echo "# img.github.io" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin git@github.com:abc62201/img.github.io.git
+git push -u origin master
