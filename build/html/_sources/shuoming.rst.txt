@@ -1,5 +1,13 @@
-使用说明
+MTN软件
 ====================================
-添加游戏
+.. toctree::
+   :maxdepth: 1
+
+   shuoming/1
+
+.. image:: ewer.ico
+   :align: center
+   :alt: 野火logo
+
 
 

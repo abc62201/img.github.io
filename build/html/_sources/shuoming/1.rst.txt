@@ -1,9 +1,9 @@
-MTN软件
+使用说明
 ====================================
 .. toctree::
    :maxdepth: 1
 
-   shuoming/1
+   intro/1
 
 .. image:: ewer.ico
    :align: center

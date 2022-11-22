@@ -7,8 +7,8 @@ ssh -T git@github.com
 上传方法
 echo "# img.github.io" >> README.md
 git init
-git add README.md
-git commit -m "first commit"
+git add *
+git commit -m "1"
 git branch -M master
 git remote add origin git@github.com:abc62201/img.github.io.git
 git push -u origin master
@@ -16,6 +16,23 @@ git push -u origin master
 要更新你的本地仓库至最新改动，执行：
 git pull
 
+sphinx制作成网页
+make html
+sphinx皮肤黑
+html_theme = 'groundwork'
+sphinx皮肤白
+html_theme = 'sizzle'
+sphinx皮肤黑白
+html_theme = 'sphinx_pdj_theme'
+sphinx皮肤白色居中
+html_theme = 'piccolo_theme'
+
+html_theme_path = [sphinx_pdj_theme.get_html_theme_path()]
+
+sphinx测试
+sphinx-autobuild source build/html
+本地测试网址
+ http://127.0.0.1:8000 
 网页地址
 bookgithubio.rtfd.io
 https://bookgithubio.readthedocs.io/zh/master/
@@ -27,3 +44,4 @@ https://readthedocs.org/projects/bookgithubio/https://readthedocs.org/projects/b
 https://blog.csdn.net/weixin_47319129/article/details/125309657
 https://blog.csdn.net/lu_embedded/article/details/109006380
 https://zh-sphinx-doc.readthedocs.io/en/latest/rest.html
+https://blog.csdn.net/u012014531/article/details/122603984
