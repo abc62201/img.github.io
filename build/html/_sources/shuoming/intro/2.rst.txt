@@ -51,4 +51,14 @@
         .. image:: 6.png
             :align: center
             :alt: 添加游戏 
+        
+        3. fbneo模拟器可使用鼠标右键添加IPS游戏--改版游戏
+
+           需要必须使用的是fbneo模拟器
+
+        4. 游戏分类路径自动记录文件MTN/bak_phat.txt 
+        
+        .. image:: 7.png
+            :align: center
+            :alt: 添加游戏 
 
