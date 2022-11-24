@@ -12,6 +12,7 @@ Welcome to MTN
    
    shuoming
    ps4
+   switch
 
 
 索引页
