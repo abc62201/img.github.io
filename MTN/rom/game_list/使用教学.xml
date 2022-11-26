@@ -1,0 +1,48 @@
+<?xml version="1.0" standalone="yes"?>
+<plp_yx_m>
+  <book>
+    <rom>kong</rom>
+    <name>添加游戏</name>
+    <void>rom\使用教学\video\add1.mp4</void>
+    <kadai>E:\MTN\rom\fc\cassette\1942 (Japan, USA).png</kadai>
+    <mig>kong</mig>
+    <emu>kong</emu>
+    <intro>E:\MTN\rom\fc\intro\1942 (Japan, USA).txt</intro>
+  </book>
+  <book>
+    <rom>kong</rom>
+    <name>导入皮肤</name>
+    <void>rom\使用教学\video\add2.mp4</void>
+    <kadai>kong</kadai>
+    <mig>kong</mig>
+    <emu>kong</emu>
+    <intro>kong</intro>
+  </book>
+  <book>
+    <rom>kong</rom>
+    <name>给游戏添加视频</name>
+    <void>rom\使用教学\video\add3.mp4</void>
+    <kadai>kong</kadai>
+    <mig>kong</mig>
+    <emu>kong</emu>
+    <intro>kong</intro>
+  </book>
+  <book>
+    <rom>kong</rom>
+    <name>给游戏添加图片</name>
+    <void>rom\使用教学\video\add4.mp4</void>
+    <kadai>kong</kadai>
+    <mig>kong</mig>
+    <emu>kong</emu>
+    <intro>kong</intro>
+  </book>
+  <book>
+    <rom>kong</rom>
+    <name>给游戏添加信息</name>
+    <void>rom\使用教学\video\add5.mp4</void>
+    <kadai>kong</kadai>
+    <mig>kong</mig>
+    <emu>kong</emu>
+    <intro>kong</intro>
+  </book>
+</plp_yx_m>

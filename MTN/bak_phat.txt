@@ -1,0 +1,1 @@
+﻿[bak0]rom=rom/使用教学/romthumb=rom/使用教学/thumbvideo=rom/使用教学/videocassette=rom/使用教学/cassetteintro=rom/使用教学/intro

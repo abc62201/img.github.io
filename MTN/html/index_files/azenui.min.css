@@ -1,0 +1,102 @@
+#azen-header {
+	width:100%; 
+	height:60px; 
+	background-color:#0e90d2;
+	}
+#azen-produc {
+	width:100%; 
+	margin:0 auto;  
+	margin-top:20px;
+	}
+.azen-conter {
+	width:100%; 
+	height:60px; 
+	margin:0 auto;
+	}	
+.azen-logo{
+	width:90px; 
+	height:60px; 
+margin-top:0px;
+	}	
+	.azen-logo img{
+		width:100%; 
+	height:100%; 
+	}
+.azen-lister {
+	width:100%; 
+	padding-left:9px;
+	}
+.azen-lister li {
+	width:235px; 
+	height:280px; 
+	float:left; 
+	background-color:#fff; 
+	margin-bottom:15px; 
+	margin-right:15px; 
+	opacity:0.8;
+	}
+.azen-lister li:hover{
+	opacity:1; 
+	box-shadow:0 0 12px rgba(0, 0, 0, 1); 
+	}
+.azen-viewit {
+	width:215px;
+	overflow:hidden; 
+	border-bottom:1px solid #f8f8f8; 
+	display:block; 
+	padding:10px 10px;
+	}
+.azen-viewit li {
+		width:auto;  
+		height:16px;  
+		float:left; 
+		background-color:#fff; 
+		margin:0; 
+		line-height:16px; 
+		padding-left:20px; 
+		text-align:right; 
+		background:url("sc.png") no-repeat;
+		}
+.azen-viewit li:hover{
+	opacity:1; 
+	box-shadow:none;
+	
+	}
+.azen-paddin {
+	padding:0 10px; 
+	line-height:50px;
+	text-align:center;
+	
+	}
+.azen-paddin a:hover {
+	text-decoration:none;
+	}
+.list-viewit li {
+	margin-right:20px; 
+	margin-top:3px;
+	}
+.azen-viewit .viewit {
+	background-position:-207px -142px;
+	}
+.azen-viewit .likeit {
+	background-position:-207px -104px;
+	}
+.azen-viewit .luatio {
+	background-position:-123px -142px;
+	}
+.azen-viewit li a {
+	color:#bfbfbf; 
+	display:block; 
+	float:left;
+	}
+
+.azen-viewit li i {
+	float:left; font-size:14px; 
+	padding-top:2px; 
+	padding-right:2px;
+	}
+	.leibiao{
+	width:99%; 
+ 
+		
+	}

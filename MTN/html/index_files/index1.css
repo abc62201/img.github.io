@@ -1,0 +1,74 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body,html {
+  margin: 0;
+
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  background-attachment:fixed;
+  overflow:hidden;
+}
+.daohang {
+position:absolute;/* 视频层 允许重叠*/
+z-index:10;
+top:35%;
+width: 100%;
+height:35%;
+background-image:url(../../theme/sky1.png);
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  background-attachment:fixed;
+/*background-color:#ffffff;*/
+opacity:0.2;
+transform: rotateX(0deg);
+line-height: 200px;
+animation-name: example;
+animation:example infinite;
+  animation-duration: 10s;
+}
+@keyframes example {
+  0%   { transform: rotateX(0deg);}
+  25%  {transform: rotateX(15deg);}
+  50%  {transform: rotateX(0deg);}
+  75%  {transform: rotateX(15deg);}
+  100% {transform: rotateX(0deg);}
+}
+.daohang1 {
+position:absolute;/* 视频层 允许重叠*/
+z-index:20;
+top:35%;
+
+width: 100%;
+height:35%;
+
+line-height: 200px;
+opacity:1;
+
+}
+.iul{
+	position:absolute;
+	top:10%;
+	left:20%;
+	list-style-type: none;
+	line-height:2;
+	white-space: nowrap;
+	transition: left 0.5s;
+	   
+}
+.iul li{
+overflow : visible;
+opacity:0.2;
+	display:inline;
+	
+		vertical-align :top;
+	margin: 1%;
+}
+.iul li img{
+width: 540px;
+  height: 250px;
+	transition: width 0.6s,height 0.6s;
+	transition-delay: 0s;
+}

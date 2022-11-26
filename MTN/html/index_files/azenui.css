@@ -1,0 +1,151 @@
+/**
+ * 整站通用css
+ * @azenui
+ * @date 2015-01-20
+ **/
+/*********** css reset start****************/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    border: 0 none;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: none;
+}
+
+body {line-height: 1; font: 12px/1.5 "Microsoft Yahei", "微软雅黑", "Helvetica Neue", "adobe雅黑"; }
+body, a { line-height: 1.5; }
+a {	color: #262626; text-decoration: none; }
+a:hover { text-decoration:none; }
+img { color: transparent; font-size: 0; vertical-align: middle; -ms-interpolation-mode: bicubic;}
+ol, ul { list-style: none; }
+li { display: list-item; }
+html, body { background: #fff; }
+textarea { overflow:hidden; resize:none; }
+ol, ul {list-style: none;}
+blockquote, q { quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after { content: '';  content: none;}
+[readonly] {background: #EBEBE4;border: 1px solid #7F9DB9;}
+html {-webkit-text-size-adjust:none;}
+:focus {outline: 0;}
+ins {text-decoration: none;}
+.fl { float: left; }
+.fr { float: right; }
+.hide { display: none !important; }
+.show { display: block !important; }
+del {text-decoration: line-through;}
+table { border-collapse: collapse; border-spacing: 0;}
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { zoom: 1; }
+body {background-color:#edeff0;}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: 500;
+}
+
+address, caption, cite, code, dfn, em, th, var {
+    font-style: normal;
+    font-weight: 500;
+}
+
+ol, ul {
+    list-style: outside none none;
+}
+
+ins, a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+fieldset, img {
+    border: 0px none;
+}
+
+html {
+    background: none repeat scroll 0% 0% #f6f8f8;
+    color: #000000;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+audio, canvas, video {
+    display: inline-block;
+}
+
+body, button, input, select, textarea {
+    font: 12px/1.5 tahoma,"microsoft yahei","微软雅黑";
+}
+
+button, input, select, textarea {
+    font-size: 100%;
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+    cursor: pointer;
+}
+
+q:before, q:after {
+    content: "";
+}
+
+del {
+    text-decoration: line-through;
+}
+
+mark {
+    background: none repeat scroll 0% 0% #ffff00;
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+th {
+    text-align: inherit;
+}
+
+iframe {
+    display: block;
+}
+
+.pdright10 {
+    padding-right:10px;
+}
+.space {height:100px;}

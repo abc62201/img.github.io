@@ -1,0 +1,268 @@
+﻿
+* {
+  box-sizing: border-box;
+}
+
+body,html {
+  margin: 0;
+/*background-image:url(theme/bg1.png);*/
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  background-attachment:fixed;
+	width:100%;
+    height:100%;
+}
+
+/* 设置页眉的样式 */
+.header {
+  position:relative;
+  /*padding:500px;/* 设置页眉大小 */
+height:20%;
+  text-align: center;/* 设置页眉居中 */
+   background-repeat:no-repeat; 
+   background-size:100% 100%;
+   -moz-background-size:100%
+}
+.yemei {
+	width:100%;
+    height:100%;
+}
+.head1 {
+	position:absolute;/* 允许重叠 */
+z-index:100;
+left:20%;
+top:10%;
+	text-align:center;/* 菜单层 字体居中（图片等元素全部居中） */
+	float:left;/* 菜单层 左边开始 */
+width:20.83%;
+height:100%;
+   background-repeat:no-repeat; 
+   background-size:100% 100%;
+   -moz-background-size:100%
+}
+.logo {
+	width:100%;
+height:100%;
+}
+.head2 {
+	position:absolute;/* 允许重叠 */
+z-index:80;
+left:45.4%;
+top:82%;
+	text-align:center;/* 菜单层 字体居中（图片等元素全部居中） */
+	float:left;/* 菜单层 左边开始 */
+width:10%;
+height:25%;
+display:none;
+}
+.femi {
+	width: 100%;
+	height:100%;
+}
+/* 设置顶部导航栏的样式 */
+.topnav {
+	position:absolute;
+  overflow: hidden;
+background-color:#672906;
+top:0%;
+width:100%;
+height:8%;
+z-index:100;
+}
+
+/* 设置 topnav 链接的样式 */
+.topnav a {
+  float: left;/* 设置 topnav 链接的样式从左边开始 */
+  display: block;/* 设置 topnav 链接的样式 此元素将显示为块级元素，此元素前后会带有换行符。*/
+color: #ffffff;
+  text-align: center;/* 设置 topnav 链接的字体居中 */
+  padding: 14px 16px;/* 设置 topnav 链接的大小 */
+  text-decoration: none;/* 设置 topnav 链接文本的样式 */
+font-family:"微软雅黑";
+font-size:25pt;
+}
+
+/* 改变鼠标悬停时的颜色 */
+.topnav a:hover {
+  background-color: #ddd;/* 改变鼠标悬停时的背景颜色 */
+  color: #ffffff;/* 改变鼠标悬停时的颜色 */
+}
+
+/* 菜单层(列表层) */
+.column1 {
+	position:absolute;/* 允许重叠 */
+	 overflow: hidden;
+z-index:80;
+left:-9%;
+top:25%;
+	text-align:center;/* 菜单层 字体居中（图片等元素全部居中） */
+	float: left;/* 菜单层 左边开始 */
+width:30%;
+	/*padding: 5px; 菜单层 边距 */
+   /* background-color:#ff0000   菜单层 背景颜色删除这句就透明 */
+}
+/* 视频层 */
+.column2 {
+	position:absolute;/* 视频层 允许重叠*/
+z-index:60;
+left:13.2%;
+top:-11%;
+	text-align:center;/* 视频层 字体居中（图片等元素全部居中）*/
+	float: left; /* 视频层 左边开始*/
+width:73.5%;
+height:110%;
+/*	padding: 5px; 视频层 边距 */
+transform:skew( 0deg,0deg);
+	/*background-color:#00ff00*/ /* 视频层 背景颜色 删除这句就透明*/
+}
+/* 视频 */
+.vid{
+	width: 100%;/* 视频 宽度也可以是像素值200px也可以是百分比50% */
+	height: 100%;/* 视频 高度也可以是像素值200px也可以是百分比50% 这个属性放在层里就是层的高度*/
+}
+/* 菜单里面字体格式 */
+.column1 option{
+font-size:20pt;
+font-family:"HYZhengYuan-35W";
+}
+/* 视频遮罩层，其实就是在视频层上加了一个透明层 */
+.column3 {
+	position:absolute;/* 视频遮罩层 允许重叠*/
+z-index:70;
+left:0%;
+top:-13%;
+	/*color:#0000ff;*/ /* 视频遮罩层 颜色没用的可以删除*/
+width:100%;
+height:120%;
+}
+/* 电视样式（TV边框） */
+.dians{
+	width: 100%;/* 电视样式 宽度也可以是像素值200px也可以是百分比50% 设置比层大后会超出层（容器里面放了图片）*/
+	height:100%;/* 电视样式 高度也可以是像素值200px也可以是百分比50% 这个属性放在层里就是层的高度设置比层大后会超出层（容器里面放了图片）*/
+}
+/* 左下角图片层 */
+.column4 {
+	position:absolute;/* 左下角图片层 允许重叠*/
+z-index:80;
+left:0px;
+top:59.4%;
+	/*color:#0000ff;*/ /* 左下角图片层 颜色没用的可以删除*/
+width:36.4%;
+height:40.17%;
+}
+
+
+/* 左下角图片 */
+.jizhong{
+	width: 100%;/* 左下角图片 宽度也可以是像素值200px也可以是百分比50% 设置比层大后会超出层（容器里面放了图片）*/
+	height:100%;/* 左下角图片 高度也可以是像素值200px也可以是百分比50% 这个属性放在层里就是层的高度设置比层大后会超出层（容器里面放了图片）*/
+}
+.column5 {
+	position:absolute;/* 左下角图片层 允许重叠*/
+z-index:90;
+left:80%;
+top:-25%;
+	/*color:#0000ff;*/ /* 左下角图片层 颜色没用的可以删除*/
+width:20%;
+height:30%;
+}
+
+
+/* 左下角图片 */
+.renwu{
+	width: 100%;/* 左下角图片 宽度也可以是像素值200px也可以是百分比50% 设置比层大后会超出层（容器里面放了图片）*/
+	height:100%;/* 左下角图片 高度也可以是像素值200px也可以是百分比50% 这个属性放在层里就是层的高度设置比层大后会超出层（容器里面放了图片）*/
+}
+/*蒙板*/
+.column6 {
+	position:absolute;/* 左下角图片层 允许重叠*/
+z-index:70;
+left:23.6%;
+top:8.2%;
+	/*color:#0000ff;*/ /* 左下角图片层 颜色没用的可以删除*/
+width:43.2%;
+height:90%;
+transform:skew(0deg,0deg);
+opacity:0.5;
+}
+
+
+/* 蒙板 */
+.mengban{
+	width: 100%;/* 左下角图片 宽度也可以是像素值200px也可以是百分比50% 设置比层大后会超出层（容器里面放了图片）*/
+	height:100%;/* 左下角图片 高度也可以是像素值200px也可以是百分比50% 这个属性放在层里就是层的高度设置比层大后会超出层（容器里面放了图片）*/
+}
+
+.column7 {
+	position:absolute;/* 视频层 允许重叠*/
+z-index:1;
+left:13.2%;
+top:-11%;
+	text-align:center;/* 视频层 字体居中（图片等元素全部居中）*/
+	float: left; /* 视频层 左边开始*/
+width:73.5%;
+height:110%;
+	/*padding: 5px; 视频层 边距 */
+transform:skew( 0deg,0deg);
+	/*background-color:#00ff00*/ /* 视频层 背景颜色 删除这句就透明*/
+}
+.beiban {
+	width: 100%;/* 视频 宽度也可以是像素值200px也可以是百分比50% */
+	height: 100%;/* 视频 高度也可以是像素值200px也可以是百分比50% 这个属性放在层里就是层的高度*/
+}
+
+
+
+/* 菜单栏 */
+.sel{
+	background-color:transparent;/* 菜单栏 背景颜色transparent为透明值#ffffff就是白色*/
+width:41%;
+	border: solid 1px #000;/* 菜单栏 边框3px是线条粗细 #0000ff颜色solid实线四周全家修改参数可以改成虚线*/
+	
+}
+
+/* 导航栏下面的整体图层 */
+.row {
+	position:relative;/* 导航栏下面的整体图层 允许重叠 */
+  border:;/* 导航栏下面的整体图层 边框3px是线条粗细 #0000ff颜色solid实线四周全家修改参数可以改成虚线*/
+	width:100%;
+height:75%;
+}
+.intro {
+	position:absolute;
+z-index:120;
+top:54%;
+height:40%;
+color:#ffffff;
+left:3.5%;
+width:36%;
+font-size:18pt;
+font-family:"方正大黑简体";
+background-color:;
+overflow: hidden;
+word-wrap:break-word;
+display:none;
+}
+.bvid{
+  position: absolute;  
+             
+			top:0px;
+left:0px;			
+             
+            min-width: 100%;  
+            min-height: 100%;  
+            height: auto;  
+            width: auto;  
+            /*加滤镜*/
+            /*filter: blur(15px); //背景模糊设置 */
+            /*-webkit-filter: grayscale(100%);*/  
+            /*filter:grayscale(100%); //背景灰度设置*/  
+            z-index:-999
+}
+/* 响应式布局 - 创建堆叠而非并排的三列 
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+*/

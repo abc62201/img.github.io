@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<plp_yx_m>
+  <book>
+    <name>kong</name>
+    <lujing>emu\RetroArch\retroarch.exe</lujing>
+    <txt>使用教学</txt>
+    <xmlfile>rom\game_list\使用教学.xml</xmlfile>
+    <dshj>theme\tv\csclub.png</dshj>
+    <jiz>kong</jiz>
+    <bj>kong</bj>
+    <yemei>kong</yemei>
+    <renwu>kong</renwu>
+    <dll>emu\cores\mesen_libretro.dll</dll>
+  </book>
+</plp_yx_m>

@@ -1,0 +1,96 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+<meta charset="utf-8" />
+<meta name="screen-orientation" content="portrait" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="basic/css/style.css">
+<script src="index_js/index2.js"></script>
+<script src="index_js/index.json"></script>
+<title>梦童年</title>
+</head>
+
+<body id="zhuye" scroll="no">
+<div class="manage-modal">
+
+	<div class="flipbook-viewport">
+		<div class="container">
+			<div class="flipbook" id="flipbook">
+
+				<div>
+<img src="../theme/other/2logo.png"width="100%" height="100%"></img>
+				</div>
+
+			</div>
+		</div>
+		<button class="prev-btn"></button>
+		<button class="next-btn"></button>
+	</div>
+	
+</div>
+
+<script type="text/javascript" src="basic/extras/jquery.min.1.7.js"></script>
+<script type="text/javascript" src="basic/extras/modernizr.2.5.3.min.js"></script>
+<script type="text/javascript">
+	function loadApp() {
+		$('.flipbook').turn({
+			width: 914,
+			height: 643,
+			elevation: 500,
+			gradients: true,
+			autoCenter: true
+
+		});
+	}
+	yepnope({
+		test: Modernizr.csstransforms,
+		yep: ['basic/lib/turn.js'],
+		nope: ['basic/lib/turn.html4.min.js'],
+		both: ['basic/css/basic.css'],
+		complete: loadApp
+		
+	});
+
+	$(".prev-btn").on("click", function (event) {
+		$(".flipbook").turn("previous");
+	});
+	//上一页按钮
+	$(".next-btn").on("click", function (event) {
+	
+		$(".flipbook").turn("next");
+	});
+
+	$('.seal').on('click', function () {
+		var str = '梦童年'; //假设公司名称
+		var letter = str.split('');
+		var o = 7 - Math.floor(letter.length / 2);
+		$(this).parent().siblings('.box').children('span').html();
+		for (var i = 0; i < letter.length; i++) {
+			$(this).parent().siblings('.box').children('span').eq(o + i).html(letter[i]);
+		}
+		$(this).hide().siblings('.qx-seal').show().parent().siblings('.box').show();
+	})
+	
+	$('.qx-seal').on('click', function () {
+		$(this).hide().siblings('.seal').show().parent().siblings('.box').hide();
+	})
+
+	$('.disabled').find('input').attr('disabled', 'disabled');
+	$('.disabled').find('.seal').attr('disabled', 'disabled');
+	
+
+
+</script>
+<script src="index_js/fenlie2.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+
+<html>
+<head lang="en">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+<div>
+<button type="button" onclick="last()">上一页</button>
+<button type="button" onclick="next()">下一页</button>
+<input type="checkbox" name="vehicle" id="sk" onclick="sk_x()">开启实时攻略<br>
+<p style="color:#ff0000">实时攻略开启后会自动翻页但是会影响响应速度。</p>
+<div id='zhu' style="word-wrap:break-word;">
+没有攻略<br>
+</div>
+</div>
+<script>
+function next(){
+window.external.gl_next1();
+}
+
+function last(){
+window.external.gl_next2();
+}
+function sk_x(){
+window.external.zid_gl(document.getElementById("sk").checked);
+}
+function sk_x_f(){
+document.getElementById("sk").checked=false;
+}
+</script>
+</body>
+</html>

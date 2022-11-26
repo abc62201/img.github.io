@@ -1,0 +1,21 @@
+
+.list_li {
+	 position:relative;
+	color: #ffffff;
+	font-size:190%;
+	top:-15%;
+	left:3%;
+}
+.list_li ul{
+	
+	list-style-type: none;
+	line-height:2;
+}
+
+.list_li ul li {
+	/*background-image: linear-gradient(to bottom right, #ff0000, #0000ff);*/
+	text-align: center;
+	  width: 44%;
+	  
+  margin: 1.45%;
+}

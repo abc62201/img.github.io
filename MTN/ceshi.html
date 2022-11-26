@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<script src="html5media.min.js"></script>
+<link rel="stylesheet" type="text/css" href="font.css">
+<link rel=" stylesheet" type="text/css" href="daohang.css" >
+<script src="daohang.js"></script>
+<link href="list_css/css/jquery-ui.min.css" rel="stylesheet">
+<script src="list_js/js/jquery.min.js"></script>
+<script src="list_js/js/jquery-ui.min.js"></script>
+<link href="list_css/css/keyboard.css" rel="stylesheet">
+<script src="list_js/js/jquery.keyboard.js"></script>
+<script src="list_js/js/mtn_sou.js"></script>
+</head>
+<body id="zhuye" scroll="no">
+<video class="bvid" id="bvid"  loop="loop" autoplay="autoplay" muted>
+
+</video>
+<div class="header">
+  <div class="head1">
+<img id="logo"class="logo"src="" >
+</img>
+  </div>
+<div class="head2">
+<img id="fmt" class="femi">
+</img>
+</div>
+<img id="yemei"class="yemei" >
+</img>
+</div>
+
+
+<div id="id1" class="topnav">
+
+</div>
+<div class="row" id="row" >
+  <div class="column1">
+    搜索: <input id="keyboard"  type="text" name="firstname" onchange="sou()"/><br>
+<select id='ziti'  name="ziti"  class="sel" multiple="true" onclick="liebiao()" ondblclick="yunxing()"Size = "10" >
+ </select>
+  </div>
+
+  <div class="column2" id="video_c" onmouseout="ygongju()">
+  <video id='video-player' class="vid" loop="loop" >
+  <source id='vode'  type="video/mp4"></source>
+  <source src="movie.ogg" type="video/ogg"></source>
+  
+  您的浏览器不支持 video 标签。
+</video>
+
+  </div>
+    <div class="column3">
+	<img id="dsh" class="dians"> </img>
+  </div>
+     <div class="column4">
+	<img id="jiz" class="jizhong" ></img>
+  </div>
+    <div class="column5">
+	<img id="renwu" class="renwu" ></img>
+  </div>
+    <!-- 蒙板 -->
+     <div class="column6" onmouseover="gongju()">
+<img id="mengban"class="mengban"src="" >
+  </div>
+    <div class="column7">
+<img id="beiban" class="beiban" ></img>
+</div>
+  
+</div>
+<div class="intro" id="intro"></div>
+
+
+	<script>
+	var zInd=60
+	function getStyle(el,styleProp)
+{
+    var x = document.getElementById(el);
+
+    if (window.getComputedStyle)
+    {
+        var y = document.defaultView.getComputedStyle(x,null).getPropertyValue(styleProp); 
+    }  
+    else if (x.currentStyle)
+    {
+        var y = x.currentStyle[styleProp];
+    }                     
+
+    return y;
+}
+
+	function gongju(){
+	 zInd= getStyle("video_c","z-index"); //获取z-index属性
+	document.getElementById("video_c").setAttribute("style","z-index: 999");	
+	document.getElementById('video-player').controls =true;
+	}
+	
+	function ygongju(){
+	document.getElementById("video_c").setAttribute("style","z-index:"+zInd.toString());	
+	document.getElementById('video-player').controls =false;
+	 //alert("a");
+	}
+	function yidh()
+{
+document.getElementById('id1').style.display = "none";
+}
+	function xidh()
+{
+document.getElementById('id1').style.display = "block";
+}
+
+	function liebiao()
+{
+	
+	var js_xuanze=document.getElementById("ziti").selectedIndex;
+
+	var js_ziti = document.getElementById("ziti").value;
+	window.external.getvalue(js_ziti,js_xuanze);
+}
+	function yunxing()
+{
+
+	
+	var js_xuanze=document.getElementById("ziti").selectedIndex;
+	var js_ziti = document.getElementById("ziti").value;
+	window.external.openrom(js_ziti);
+}
+
+document.getElementById('video-player').controls = false;
+document.getElementById('video-player').autoplay = true;
+document.getElementById('video-player').muted = false;
+
+
+//document.getElementById('vode').src="rom/psp/video.mp4";
+//var video=document.getElementById("video-player"); 
+//video.play();
+</script>
+
+ </body>
+ </html>
+ 

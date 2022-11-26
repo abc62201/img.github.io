@@ -1,0 +1,22 @@
+
+.list_li {
+	 position:absolute;
+	 z-index:900;
+	color: #ffffff;
+	top:-10%;
+	left:5%;
+	text-align:left;
+	  width: 30%;
+}
+.list_li ul{
+	
+	list-style-type: none;
+ width: 70%;
+}
+.list_li ul li {
+	/*background-image: linear-gradient(to bottom right, #ff0000, #0000ff);*/
+	
+	  
+	   width: 100%;
+  margin:1%;
+}

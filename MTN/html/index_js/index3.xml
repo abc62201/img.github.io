@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <book>
+    <名称>使用教学</名称>
+    <链接页地址>html/0.html</链接页地址>
+    <左边图片>../theme/index_list/index3/fcintro.webp.jpg</左边图片>
+    <右边图片>../theme/index_list/index3/123.jpg</右边图片>
+    <背景图片>../theme/index_list/index3/JPEG.webp.jpg</背景图片>
+  </book>
+</DocumentElement>
