@@ -3,6 +3,7 @@ ps4游戏
 .. toctree::
    :maxdepth: 1
 
+   ps4/2
    ps4/1
 
 

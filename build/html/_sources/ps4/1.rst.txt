@@ -1,7 +1,7 @@
 PS4游戏下载
 ====================================
 
-战神4 	God of War  5.05
+战神4 	God of War4  5.05
 ------------------------------------
 
 .. image:: ps4dw/1.jpg
@@ -15,3 +15,15 @@ PS4游戏下载
     解压密码 daj0668
 
 
+战神5 	God of War5
+------------------------------------
+
+.. image:: ps4dw/2.png
+   :align: center
+   :alt: 战神5
+
+::
+
+    https://pan.baidu.com/s/1QbNusO4eMonQ-JBREdBvGw
+    提取码 5678
+    解压密码 gamekegs.com
