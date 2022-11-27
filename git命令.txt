@@ -16,6 +16,9 @@ git push -u origin master
 要更新你的本地仓库至最新改动，执行：
 git pull
 
+由于在线编辑了远程仓库，需要下面命令将远程仓库合并到本地
+git pull --rebase origin master
+
 sphinx制作成网页
 make html
 sphinx皮肤黑
