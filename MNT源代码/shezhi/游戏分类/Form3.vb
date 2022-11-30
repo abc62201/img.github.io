@@ -4601,4 +4601,12 @@ joy_zhao:
 
 
     End Sub
+
+    Private Sub 替换当前资料ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 替换当前资料ToolStripMenuItem.Click
+        If (Me.ComboBox1.SelectedIndex > -1) Then
+            Form13.Label1.Text = liebiao
+            Me.Hide()
+            Form13.Show()
+        End If
+    End Sub
 End Class

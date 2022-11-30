@@ -16,7 +16,7 @@
 
 6.保存之后关闭即可
 
-.. image:: 2.png
+.. image:: shimg/2.png
    :align: center
    :alt: 添加游戏
 
@@ -26,7 +26,7 @@
 
         优点可将资源自由放置。
 
-        .. image:: 3.png
+        .. image:: shimg/3.png
             :align: center
             :alt: 添加游戏 
 
@@ -34,7 +34,7 @@
         1. 如分类名称为fc则自动保存后自动生成fc分类和文件夹放入对应的资料       
 
 
-        .. image:: 4.png
+        .. image:: shimg/4.png
             :align: center
             :alt: 添加游戏    
 
@@ -44,11 +44,11 @@
 
             优点添加简单可复制路径甚至一键完成添加
 
-        .. image:: 5.png
+        .. image:: shimg/5.png
             :align: center
             :alt: 添加游戏 
 
-        .. image:: 6.png
+        .. image:: shimg/6.png
             :align: center
             :alt: 添加游戏 
         
@@ -58,7 +58,7 @@
 
         4. 游戏分类路径自动记录文件MTN/bak_phat.txt 
         
-        .. image:: 7.png
+        .. image:: shimg/7.png
             :align: center
             :alt: 添加游戏 
 

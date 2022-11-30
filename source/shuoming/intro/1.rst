@@ -29,7 +29,7 @@ MNT1.6.2下载
    https://pan.baidu.com/s/1kD8Ssk6rdp5riIxH-QNlhg?pwd=1234
    提取码  1234
 
-.. image:: 1.png
+.. image:: shimg/1.png
    :align: center
    :alt: 注册表
 

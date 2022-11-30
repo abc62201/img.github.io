@@ -42,6 +42,7 @@ Partial Class Form3
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.Button14 = New System.Windows.Forms.Button()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.ProgressBar2 = New System.Windows.Forms.ProgressBar()
         Me.Button19 = New System.Windows.Forms.Button()
         Me.Label92 = New System.Windows.Forms.Label()
         Me.Button17 = New System.Windows.Forms.Button()
@@ -262,7 +263,7 @@ Partial Class Form3
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.ProgressBar2 = New System.Windows.Forms.ProgressBar()
+        Me.替换当前资料ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage6.SuspendLayout()
@@ -444,6 +445,13 @@ Partial Class Form3
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "基础设置"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'ProgressBar2
+        '
+        Me.ProgressBar2.Location = New System.Drawing.Point(843, 17)
+        Me.ProgressBar2.Name = "ProgressBar2"
+        Me.ProgressBar2.Size = New System.Drawing.Size(190, 23)
+        Me.ProgressBar2.TabIndex = 12
         '
         'Button19
         '
@@ -630,9 +638,9 @@ Partial Class Form3
         '
         'ContextMenuStrip1
         '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.移动ToolStripMenuItem, Me.在选中的位置下面新建分类ToolStripMenuItem, Me.AaToolStripMenuItem, Me.为该游戏添加背景ToolStripMenuItem, Me.制作图片集ToolStripMenuItem, Me.PlToolStripMenuItem, Me.制作卡带图片集ToolStripMenuItem, Me.批量添加卡带图片集ToolStripMenuItem, Me.下载并添加视频ToolStripMenuItem, Me.打开游戏信息ToolStripMenuItem, Me.打开图片集文件ToolStripMenuItem, Me.打开卡带集文件ToolStripMenuItem, Me.编辑游戏信息ToolStripMenuItem, Me.跳转到行ToolStripMenuItem, Me.添加FBN模拟器中的IPS游戏ToolStripMenuItem, Me.添加游戏攻略ToolStripMenuItem, Me.CeToolStripMenuItem})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.移动ToolStripMenuItem, Me.在选中的位置下面新建分类ToolStripMenuItem, Me.AaToolStripMenuItem, Me.为该游戏添加背景ToolStripMenuItem, Me.制作图片集ToolStripMenuItem, Me.PlToolStripMenuItem, Me.制作卡带图片集ToolStripMenuItem, Me.批量添加卡带图片集ToolStripMenuItem, Me.下载并添加视频ToolStripMenuItem, Me.打开游戏信息ToolStripMenuItem, Me.打开图片集文件ToolStripMenuItem, Me.打开卡带集文件ToolStripMenuItem, Me.编辑游戏信息ToolStripMenuItem, Me.跳转到行ToolStripMenuItem, Me.添加FBN模拟器中的IPS游戏ToolStripMenuItem, Me.添加游戏攻略ToolStripMenuItem, Me.CeToolStripMenuItem, Me.替换当前资料ToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(227, 378)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(227, 422)
         '
         '移动ToolStripMenuItem
         '
@@ -2612,12 +2620,11 @@ Partial Class Form3
         'Timer2
         '
         '
-        'ProgressBar2
+        '替换当前资料ToolStripMenuItem
         '
-        Me.ProgressBar2.Location = New System.Drawing.Point(843, 17)
-        Me.ProgressBar2.Name = "ProgressBar2"
-        Me.ProgressBar2.Size = New System.Drawing.Size(190, 23)
-        Me.ProgressBar2.TabIndex = 12
+        Me.替换当前资料ToolStripMenuItem.Name = "替换当前资料ToolStripMenuItem"
+        Me.替换当前资料ToolStripMenuItem.Size = New System.Drawing.Size(226, 22)
+        Me.替换当前资料ToolStripMenuItem.Text = "替换当前资料"
         '
         'Form3
         '
@@ -2891,4 +2898,5 @@ Partial Class Form3
     Friend WithEvents 添加游戏攻略ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label95 As System.Windows.Forms.Label
     Friend WithEvents ProgressBar2 As System.Windows.Forms.ProgressBar
+    Friend WithEvents 替换当前资料ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
