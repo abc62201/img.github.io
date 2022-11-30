@@ -1,7 +1,21 @@
 PS4游戏下载
 ====================================
 
-战神4 	God of War4  5.05
+战神3 重制版	God of War3  
+------------------------------------
+
+.. image:: ps4dw/3.jpeg
+   :align: center
+   :alt: 战神3
+
+::
+
+    https://pan.baidu.com/s/1iRDgwfe_COdYWvUQOp2gtg
+    提取码 	ftcj
+    
+
+
+战神4 	God of War4 
 ------------------------------------
 
 .. image:: ps4dw/1.jpg

@@ -305,66 +305,66 @@ Public Class Form13
 
     Public Function file_w(ByVal str1 As String, ByVal str2 As String)
         Dim str3 As String = str1
-        If (xml_index = -1) Then
-            MsgBox("未选择游戏")
-        Else
-            If CheckBox1.Checked And str1 <> str2 And My.Computer.FileSystem.FileExists(str1) Then
-                Dim showUI As FileIO.UIOption = FileIO.UIOption.AllDialogs
-                If My.Computer.FileSystem.FileExists(str2) Then
-                    System.IO.File.Delete(str2)
-                End If
-            End If
 
-            If CheckBox3.Checked And str1 <> str2 And My.Computer.FileSystem.FileExists(str1) Then
-                Dim showUI As FileIO.UIOption = FileIO.UIOption.AllDialogs
-                If (Directory.Exists(Path.GetDirectoryName(str2))) Then
-                    str3 = Path.GetDirectoryName(str2) + "\" + Path.GetFileName(str1)
-
-                    If Not My.Computer.FileSystem.FileExists(str3) And Path.GetDirectoryName(str1) <> Path.GetDirectoryName(str2) Then
-                        My.Computer.FileSystem.CopyFile(str1, Path.GetDirectoryName(str2) + "\" + Path.GetFileName(str1), showUI)
-                    End If
-
-
-                End If
-            End If
-
-            If CheckBox2.Checked And str1 <> str2 Then
-                Dim showUI As FileIO.UIOption = FileIO.UIOption.AllDialogs
-                If My.Computer.FileSystem.FileExists(str1) Then
-                    System.IO.File.Delete(str1)
-                End If
+        If CheckBox1.Checked And str1 <> str2 And My.Computer.FileSystem.FileExists(str1) Then
+            Dim showUI As FileIO.UIOption = FileIO.UIOption.AllDialogs
+            If My.Computer.FileSystem.FileExists(str2) Then
+                System.IO.File.Delete(str2)
             End If
         End If
+
+        If CheckBox3.Checked And str1 <> str2 And My.Computer.FileSystem.FileExists(str1) Then
+            Dim showUI As FileIO.UIOption = FileIO.UIOption.AllDialogs
+            If (Directory.Exists(Path.GetDirectoryName(str2))) Then
+                str3 = Path.GetDirectoryName(str2) + "\" + Path.GetFileName(str1)
+
+                If Not My.Computer.FileSystem.FileExists(str3) And Path.GetDirectoryName(str1) <> Path.GetDirectoryName(str2) Then
+                    My.Computer.FileSystem.CopyFile(str1, Path.GetDirectoryName(str2) + "\" + Path.GetFileName(str1), showUI)
+                End If
+
+
+            End If
+        End If
+
+        If CheckBox2.Checked And str1 <> str2 Then
+            Dim showUI As FileIO.UIOption = FileIO.UIOption.AllDialogs
+            If My.Computer.FileSystem.FileExists(str1) Then
+                System.IO.File.Delete(str1)
+            End If
+        End If
+
         Return str3
     End Function
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-        xmlnodes(xml_index).ChildNodes(0).InnerText = file_w(TextBox2.Text, xmlnodes(xml_index).ChildNodes(0).InnerText).Replace(Application.StartupPath() + "\", "")
-        ' xmlnodes(xml_index).ChildNodes(0).InnerText = TextBox2.Text
-        xmlnodes(xml_index).ChildNodes(1).InnerText = TextBox1.Text
-        'xmlnodes(xml_index).ChildNodes(2).InnerText = TextBox6.Text
-        xmlnodes(xml_index).ChildNodes(2).InnerText = file_w(TextBox6.Text, xmlnodes(xml_index).ChildNodes(2).InnerText).Replace(Application.StartupPath() + "\", "")
-        ' xmlnodes(xml_index).ChildNodes(3).InnerText = TextBox5.Text
-        xmlnodes(xml_index).ChildNodes(3).InnerText = file_w(TextBox5.Text, xmlnodes(xml_index).ChildNodes(3).InnerText).Replace(Application.StartupPath() + "\", "")
-        ' xmlnodes(xml_index).ChildNodes(4).InnerText = TextBox3.Text
-        xmlnodes(xml_index).ChildNodes(4).InnerText = file_w(TextBox3.Text, xmlnodes(xml_index).ChildNodes(4).InnerText).Replace(Application.StartupPath() + "\", "")
-        ' xmlnodes(xml_index).ChildNodes(5).InnerText = TextBox4.Text
-        xmlnodes(xml_index).ChildNodes(5).InnerText = file_w(TextBox4.Text, xmlnodes(xml_index).ChildNodes(5).InnerText).Replace(Application.StartupPath() + "\", "")
-        ' xmlnodes(xml_index).ChildNodes(6).InnerText = TextBox7.Text
-        xmlnodes(xml_index).ChildNodes(6).InnerText = file_w(TextBox7.Text, xmlnodes(xml_index).ChildNodes(6).InnerText).Replace(Application.StartupPath() + "\", "")
-        doc.Save(Label1.Text)
-        xmlnodes = duxml(Label1.Text, "book")
-        ListBox1.Items.Clear()
-        For i = 0 To xmlnodes.Count - 1
-            ' MsgBox(xmlnodes(i).CloneNode(1).InnerText)
-            ListBox1.Items.Add(xmlnodes(i).ChildNodes(1).InnerText)
-        Next
-        If (xml_index > 0) Then
-            ListBox1.SelectedIndex = xml_index
+        If (xml_index = -1) Then
+            MsgBox("未选择游戏")
+        Else
+            xmlnodes(xml_index).ChildNodes(0).InnerText = file_w(TextBox2.Text, xmlnodes(xml_index).ChildNodes(0).InnerText).Replace(Application.StartupPath() + "\", "")
+            ' xmlnodes(xml_index).ChildNodes(0).InnerText = TextBox2.Text
+            xmlnodes(xml_index).ChildNodes(1).InnerText = TextBox1.Text
+            'xmlnodes(xml_index).ChildNodes(2).InnerText = TextBox6.Text
+            xmlnodes(xml_index).ChildNodes(2).InnerText = file_w(TextBox6.Text, xmlnodes(xml_index).ChildNodes(2).InnerText).Replace(Application.StartupPath() + "\", "")
+            ' xmlnodes(xml_index).ChildNodes(3).InnerText = TextBox5.Text
+            xmlnodes(xml_index).ChildNodes(3).InnerText = file_w(TextBox5.Text, xmlnodes(xml_index).ChildNodes(3).InnerText).Replace(Application.StartupPath() + "\", "")
+            ' xmlnodes(xml_index).ChildNodes(4).InnerText = TextBox3.Text
+            xmlnodes(xml_index).ChildNodes(4).InnerText = file_w(TextBox3.Text, xmlnodes(xml_index).ChildNodes(4).InnerText).Replace(Application.StartupPath() + "\", "")
+            ' xmlnodes(xml_index).ChildNodes(5).InnerText = TextBox4.Text
+            xmlnodes(xml_index).ChildNodes(5).InnerText = file_w(TextBox4.Text, xmlnodes(xml_index).ChildNodes(5).InnerText).Replace(Application.StartupPath() + "\", "")
+            ' xmlnodes(xml_index).ChildNodes(6).InnerText = TextBox7.Text
+            xmlnodes(xml_index).ChildNodes(6).InnerText = file_w(TextBox7.Text, xmlnodes(xml_index).ChildNodes(6).InnerText).Replace(Application.StartupPath() + "\", "")
+            doc.Save(Label1.Text)
+            xmlnodes = duxml(Label1.Text, "book")
+            ListBox1.Items.Clear()
+            For i = 0 To xmlnodes.Count - 1
+                ' MsgBox(xmlnodes(i).CloneNode(1).InnerText)
+                ListBox1.Items.Add(xmlnodes(i).ChildNodes(1).InnerText)
+            Next
+            If (xml_index > 0) Then
+                ListBox1.SelectedIndex = xml_index
+            End If
         End If
-
     End Sub
 
     Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
@@ -377,5 +377,11 @@ Public Class Form13
         If CheckBox2.Checked Then
             CheckBox3.Checked = True
         End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        ListBox1.Items.Clear()
+        Me.Hide()
+        Form3.Show()
     End Sub
 End Class
