@@ -10,6 +10,16 @@ Public Class Form13
         Me.Hide()
         Form3.Show()
     End Sub
+    Private Function file_img(ByVal str1 As String)
+        Dim memoryStream_start As New MemoryStream()
+        Using Fs As New System.IO.FileStream(str1, IO.FileMode.Open, IO.FileAccess.Read)
+            Dim Buff(Fs.Length - 1) As Byte
+            Fs.Read(Buff, 0, Fs.Length - 1)
+            memoryStream_start.Write(Buff, 0, Buff.Length - 1)
+            Return Image.FromStream(memoryStream_start)
+        End Using
+
+    End Function
     Private Sub Form13_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Width = SystemInformation.PrimaryMonitorSize.Width * 0.6
         Me.Height = SystemInformation.PrimaryMonitorSize.Height * 0.8
@@ -58,6 +68,51 @@ Public Class Form13
         WebBrowser1.Navigate(Path.GetFullPath("theme\video.html"))
     End Sub
 
+    Private Sub ListBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles ListBox1.KeyDown
+        Dim xmldellist As Xml.XmlNodeList
+        Dim yesno As Integer
+        Dim ds As New DataSet
+        If (e.KeyCode = Keys.Delete) Then
+            yesno = MsgBox("是否要删除", MsgBoxStyle.YesNo)
+            If yesno = 6 Then
+                If (My.Computer.FileSystem.FileExists(xmlnodes(xml_index).ChildNodes(0).InnerText())) Then
+                    My.Computer.FileSystem.DeleteFile(xmlnodes(xml_index).ChildNodes(0).InnerText())
+                End If
+                If (My.Computer.FileSystem.FileExists(xmlnodes(xml_index).ChildNodes(2).InnerText())) Then
+                    My.Computer.FileSystem.DeleteFile(xmlnodes(xml_index).ChildNodes(2).InnerText())
+                End If
+                If (My.Computer.FileSystem.FileExists(xmlnodes(xml_index).ChildNodes(3).InnerText())) Then
+                    My.Computer.FileSystem.DeleteFile(xmlnodes(xml_index).ChildNodes(3).InnerText())
+                End If
+                If (My.Computer.FileSystem.FileExists(xmlnodes(xml_index).ChildNodes(4).InnerText())) Then
+                    My.Computer.FileSystem.DeleteFile(xmlnodes(xml_index).ChildNodes(4).InnerText())
+                End If
+                If (My.Computer.FileSystem.FileExists(xmlnodes(xml_index).ChildNodes(6).InnerText())) Then
+                    My.Computer.FileSystem.DeleteFile(xmlnodes(xml_index).ChildNodes(6).InnerText())
+                End If
+                xmldellist = duxml(Label1.Text, "plp_yx_m")
+                xmldellist(0).RemoveChild(xmldellist(0).ChildNodes(xml_index))
+                doc.Save(Label1.Text)
+            End If
+            xmlnodes = duxml(Label1.Text, "book")
+            ListBox1.Items.Clear()
+            For i = 0 To xmlnodes.Count - 1
+                ' MsgBox(xmlnodes(i).CloneNode(1).InnerText)
+                ListBox1.Items.Add(xmlnodes(i).ChildNodes(1).InnerText)
+            Next
+
+            If (xml_index <= xmlnodes.Count - 1) Then
+                ListBox1.SelectedIndex = xml_index
+            Else
+                ListBox1.SelectedIndex = xmlnodes.Count - 1
+            End If
+            ds.ReadXml(Label1.Text)
+            Form3.DataGridView2.DataSource = ds
+        End If
+    End Sub
+
+
+
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         ' MsgBox(ListBox1.SelectedValue)
 
@@ -65,23 +120,38 @@ Public Class Form13
         TextBox1.Text = ListBox1.Text
         TextBox2.Text = xmlnodes(xml_index).ChildNodes(0).InnerText
         TextBox6.Text = xmlnodes(xml_index).ChildNodes(2).InnerText
+        If (TextBox2.Text <> "kong" And My.Computer.FileSystem.FileExists(TextBox2.Text)) Then
+            Panel1.BackgroundImage = Image.FromFile("theme\file.jpg")
+        Else
+            Panel1.BackgroundImage = Image.FromFile("theme\file1.jpg")
+        End If
+        TextBox6.Text = xmlnodes(xml_index).ChildNodes(2).InnerText
         If (My.Computer.FileSystem.FileExists(xmlnodes(xml_index).ChildNodes(2).InnerText)) Then
             WebBrowser1.Document.All("bvid").SetAttribute("src", Path.GetFullPath(xmlnodes(xml_index).ChildNodes(2).InnerText))
+            Panel4.BackgroundImage = Image.FromFile("theme\file.jpg")
+        Else
+            WebBrowser1.Document.All("bvid").SetAttribute("src", Path.GetFullPath("theme\file1.jpg"))
+            Panel4.BackgroundImage = Image.FromFile("theme\file1.jpg")
         End If
         TextBox3.Text = xmlnodes(xml_index).ChildNodes(4).InnerText
         If (TextBox3.Text <> "kong" And My.Computer.FileSystem.FileExists(TextBox3.Text)) Then
-            Panel2.BackgroundImage = Image.FromFile(xmlnodes(xml_index).ChildNodes(4).InnerText)
+            Panel2.BackgroundImage = file_img(xmlnodes(xml_index).ChildNodes(4).InnerText)
         Else
-            Panel2.BackgroundImage = Image.FromFile("theme\file.jpg")
+            Panel2.BackgroundImage = Image.FromFile("theme\file1.jpg")
         End If
         TextBox5.Text = xmlnodes(xml_index).ChildNodes(3).InnerText
         If (TextBox5.Text <> "kong" And My.Computer.FileSystem.FileExists(TextBox5.Text)) Then
-            Panel5.BackgroundImage = Image.FromFile(xmlnodes(xml_index).ChildNodes(3).InnerText)
+            Panel5.BackgroundImage = file_img(xmlnodes(xml_index).ChildNodes(3).InnerText)
         Else
-            Panel5.BackgroundImage = Image.FromFile("theme\file.jpg")
+            Panel5.BackgroundImage = Image.FromFile("theme\file1.jpg")
         End If
         TextBox4.Text = xmlnodes(xml_index).ChildNodes(5).InnerText
         TextBox7.Text = xmlnodes(xml_index).ChildNodes(6).InnerText
+        If (TextBox7.Text <> "kong" And My.Computer.FileSystem.FileExists(TextBox7.Text)) Then
+            Panel6.BackgroundImage = Image.FromFile("theme\file.jpg")
+        Else
+            Panel6.BackgroundImage = Image.FromFile("theme\file1.jpg")
+        End If
 
     End Sub
 
@@ -303,7 +373,7 @@ Public Class Form13
         End Try
     End Sub
 
-    Public Function file_w(ByVal str1 As String, ByVal str2 As String)
+    Private Function file_w(ByVal str1 As String, ByVal str2 As String)
         Dim str3 As String = str1
 
         If CheckBox1.Checked And str1 <> str2 And My.Computer.FileSystem.FileExists(str1) Then
@@ -338,6 +408,7 @@ Public Class Form13
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim ds As New DataSet
         If (xml_index = -1) Then
             MsgBox("未选择游戏")
         Else
@@ -364,6 +435,8 @@ Public Class Form13
             If (xml_index > 0) Then
                 ListBox1.SelectedIndex = xml_index
             End If
+            ds.ReadXml(Label1.Text)
+            Form3.DataGridView2.DataSource = ds
         End If
     End Sub
 

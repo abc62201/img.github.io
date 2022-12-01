@@ -43,6 +43,9 @@ https://bookgithubio.readthedocs.io/zh/master/
 构建地址
 https://readthedocs.org/projects/bookgithubio/https://readthedocs.org/projects/bookgithubio/
 
+将github仓库地址转为下载地址
+https://www.itsvse.com/downgit/#/home
+
 学习地址
 https://blog.csdn.net/weixin_47319129/article/details/125309657
 https://blog.csdn.net/lu_embedded/article/details/109006380

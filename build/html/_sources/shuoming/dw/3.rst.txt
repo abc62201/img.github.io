@@ -1,6 +1,11 @@
 MNT升级补丁
 ====================================
 
+如果是从1.6.2开始使用的请按下面补丁发布顺序来升级。因为百度网盘分文件个数的限造之后用文件的形式进行分享最好去我的GITHUB里下载完整版
+
+https://www.itsvse.com/downgit/#/home?url=https://github.com/abc62201/img.github.io/tree/master/MTN
+
+
 2022/11/30游戏和游戏资源文件替换功能
 ------------------------------------
 
@@ -13,5 +18,14 @@ MNT升级补丁
     https://pan.baidu.com/s/1d31YLBuiYLFuP0u9iHhlvQ?pwd=1234 
     提取码 1234
 
+2022/12/2MTN1.6.2升级1.7补丁和资源下载工具补丁
+------------------------------------------------
 
+.. image:: bdimg/2.png
+   :align: center
+   :alt: 替换功能
+   
+::
 
+    https://pan.baidu.com/s/18xvPKGAjavH4guNN-p3XXg?pwd=1234 
+    提取码 1234

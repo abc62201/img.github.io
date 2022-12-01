@@ -111,6 +111,8 @@ joy_zhao:
             getpychar = "P"
         ElseIf (as_char = "呦") Then
             getpychar = "Y"
+        ElseIf (as_char = "鳄") Then
+            getpychar = "E"
         ElseIf (tmp >= 45217 And tmp <= 45252) Then
             getpychar = "A"
         ElseIf (tmp >= 45253 And tmp <= 45760) Then

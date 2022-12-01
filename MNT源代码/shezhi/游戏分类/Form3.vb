@@ -4572,6 +4572,7 @@ joy_zhao:
             gl_rom_path = DataGridView2.Rows(gl_index).Cells(0).Value
             If (gl_rom_path <> "" And Path.GetExtension(gl_rom_path) <> ".xml") Then
                 Form10.Label1.Text = gl_rom_path
+                Form10.Label3.Text = "3"
                 Form10.Show()
                 Me.Hide()
             End If
@@ -4608,5 +4609,17 @@ joy_zhao:
             Me.Hide()
             Form13.Show()
         End If
+    End Sub
+
+    Private Sub 查看缺失资源的游戏ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 查看缺失资源的游戏ToolStripMenuItem.Click
+        If (Me.ComboBox1.SelectedIndex > -1) Then
+            Form14.Label1.Text = liebiao
+            Me.Hide()
+            Form14.Show()
+        End If
+    End Sub
+
+    Private Sub CesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CesToolStripMenuItem.Click
+        MsgBox(getpychar("鳄"))
     End Sub
 End Class

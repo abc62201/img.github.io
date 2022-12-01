@@ -57,7 +57,7 @@ Partial Class Form2
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "Form2"
-        Me.Text = "梦童年1.6.2"
+        Me.Text = "梦童年1.7"
         Me.TopMost = True
         Me.TransparencyKey = System.Drawing.Color.Silver
         Me.ResumeLayout(False)

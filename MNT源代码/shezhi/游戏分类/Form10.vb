@@ -8,7 +8,12 @@ Public Class Form10
     Dim gl_web_index As Integer = 0
 
     Private Sub Form10_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        Form3.Show()
+        If Label3.Text = "3" Then
+            Form3.Show()
+        ElseIf Label3.Text = "14" Then
+            Form14.Show()
+        End If
+
 
     End Sub
     Private Sub Form10_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -37,6 +42,7 @@ Public Class Form10
         Button8.Location = New Point(500, winy * 0.05)
         Button6.Location = New Point(600, winy * 0.05)
         Button7.Location = New Point(700, winy * 0.05)
+        Label1.Location = New Point(100, 10)
         Label2.Location = New Point(20, 10)
         Label2.Text = "第" + (gl_web_index + 1).ToString + "页"
         Dim gl_file_name As String = ""
@@ -52,6 +58,9 @@ Public Class Form10
             'TextBox1.Text = gl_web_txt(gl_web_index)
             rom_file_gl.Close()
         End If
+
+
+
     End Sub
     Public Sub gl_txt()
         TextBox1.Text = gl_web_txt(gl_web_index)

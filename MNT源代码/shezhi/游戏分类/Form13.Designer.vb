@@ -356,6 +356,7 @@ Partial Class Form13
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.Label1)
+        Me.KeyPreview = True
         Me.Name = "Form13"
         Me.Text = "Form13"
         Me.Panel1.ResumeLayout(False)

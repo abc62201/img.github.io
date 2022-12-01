@@ -78,6 +78,7 @@ Partial Class Form3
         Me.添加FBN模拟器中的IPS游戏ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.添加游戏攻略ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.替换当前资料ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
@@ -263,7 +264,8 @@ Partial Class Form3
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.替换当前资料ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.查看缺失资源的游戏ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage6.SuspendLayout()
@@ -638,9 +640,9 @@ Partial Class Form3
         '
         'ContextMenuStrip1
         '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.移动ToolStripMenuItem, Me.在选中的位置下面新建分类ToolStripMenuItem, Me.AaToolStripMenuItem, Me.为该游戏添加背景ToolStripMenuItem, Me.制作图片集ToolStripMenuItem, Me.PlToolStripMenuItem, Me.制作卡带图片集ToolStripMenuItem, Me.批量添加卡带图片集ToolStripMenuItem, Me.下载并添加视频ToolStripMenuItem, Me.打开游戏信息ToolStripMenuItem, Me.打开图片集文件ToolStripMenuItem, Me.打开卡带集文件ToolStripMenuItem, Me.编辑游戏信息ToolStripMenuItem, Me.跳转到行ToolStripMenuItem, Me.添加FBN模拟器中的IPS游戏ToolStripMenuItem, Me.添加游戏攻略ToolStripMenuItem, Me.CeToolStripMenuItem, Me.替换当前资料ToolStripMenuItem})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.移动ToolStripMenuItem, Me.在选中的位置下面新建分类ToolStripMenuItem, Me.AaToolStripMenuItem, Me.为该游戏添加背景ToolStripMenuItem, Me.制作图片集ToolStripMenuItem, Me.PlToolStripMenuItem, Me.制作卡带图片集ToolStripMenuItem, Me.批量添加卡带图片集ToolStripMenuItem, Me.下载并添加视频ToolStripMenuItem, Me.打开游戏信息ToolStripMenuItem, Me.打开图片集文件ToolStripMenuItem, Me.打开卡带集文件ToolStripMenuItem, Me.编辑游戏信息ToolStripMenuItem, Me.跳转到行ToolStripMenuItem, Me.添加FBN模拟器中的IPS游戏ToolStripMenuItem, Me.添加游戏攻略ToolStripMenuItem, Me.CeToolStripMenuItem, Me.替换当前资料ToolStripMenuItem, Me.查看缺失资源的游戏ToolStripMenuItem, Me.CesToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(227, 422)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(227, 466)
         '
         '移动ToolStripMenuItem
         '
@@ -755,6 +757,12 @@ Partial Class Form3
         Me.CeToolStripMenuItem.Size = New System.Drawing.Size(226, 22)
         Me.CeToolStripMenuItem.Text = "ce"
         Me.CeToolStripMenuItem.Visible = False
+        '
+        '替换当前资料ToolStripMenuItem
+        '
+        Me.替换当前资料ToolStripMenuItem.Name = "替换当前资料ToolStripMenuItem"
+        Me.替换当前资料ToolStripMenuItem.Size = New System.Drawing.Size(226, 22)
+        Me.替换当前资料ToolStripMenuItem.Text = "替换当前资料"
         '
         'MenuStrip1
         '
@@ -2620,11 +2628,18 @@ Partial Class Form3
         'Timer2
         '
         '
-        '替换当前资料ToolStripMenuItem
+        '查看缺失资源的游戏ToolStripMenuItem
         '
-        Me.替换当前资料ToolStripMenuItem.Name = "替换当前资料ToolStripMenuItem"
-        Me.替换当前资料ToolStripMenuItem.Size = New System.Drawing.Size(226, 22)
-        Me.替换当前资料ToolStripMenuItem.Text = "替换当前资料"
+        Me.查看缺失资源的游戏ToolStripMenuItem.Name = "查看缺失资源的游戏ToolStripMenuItem"
+        Me.查看缺失资源的游戏ToolStripMenuItem.Size = New System.Drawing.Size(226, 22)
+        Me.查看缺失资源的游戏ToolStripMenuItem.Text = "查看缺失资源的游戏"
+        '
+        'CesToolStripMenuItem
+        '
+        Me.CesToolStripMenuItem.Name = "CesToolStripMenuItem"
+        Me.CesToolStripMenuItem.Size = New System.Drawing.Size(226, 22)
+        Me.CesToolStripMenuItem.Text = "ces"
+        Me.CesToolStripMenuItem.Visible = False
         '
         'Form3
         '
@@ -2899,4 +2914,6 @@ Partial Class Form3
     Friend WithEvents Label95 As System.Windows.Forms.Label
     Friend WithEvents ProgressBar2 As System.Windows.Forms.ProgressBar
     Friend WithEvents 替换当前资料ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents 查看缺失资源的游戏ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

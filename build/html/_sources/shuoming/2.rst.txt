@@ -1,5 +1,12 @@
 MTN下载
 ====================================
+
+最新的完整版下载地址
+::
+
+   https://www.itsvse.com/downgit/#/home?url=https://github.com/abc62201/img.github.io/tree/master/MTN
+
+
 MNT1.6.2下载
 ::
 
