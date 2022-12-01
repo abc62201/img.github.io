@@ -54,3 +54,6 @@ https://blog.csdn.net/u012014531/article/details/122603984
 https://ebf-contribute-guide.readthedocs.io/zh_CN/latest/rest-syntax/pic-video.html
 https://www.osgeo.cn/sphinx/usage/restructuredtext/directives.html?highlight=raw
 https://docutils.sourceforge.io/docs/ref/rst/directives.html#admonitions
+
+软件更新程序
+https://blog.csdn.net/DXJLSFB139/article/details/126400012

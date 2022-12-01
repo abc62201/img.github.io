@@ -1,0 +1,145 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body,html {
+  margin: 0;
+/*background-image:url(theme/bg1.png);*/
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  background-attachment:fixed;
+	width:100%;
+    height:100%;
+}
+.div_head{
+	z-index:100;
+	width:100%;
+	height:20%;
+	background-color: #fff;
+}
+.logo{
+	width:20%;
+	height:100%;
+	
+}
+.logo img{
+	width:100%;
+	height:100%;
+}
+.head_img{
+	position:relative;
+	z-index:100;
+	
+	width:80%;
+	height:100%;
+	float:right;
+	top:-100%
+}
+.head_img img{
+	width:100%;
+	height:100%;
+}
+.div_left{
+	z-index:90;
+	overflow:auto;
+	width:15%;
+	height:70%;
+	background-color:#F0F0F0;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #E6E6F2;
+}
+.div_left ul li{
+	
+	list-style:none;
+	font-size: 25px;
+}
+.div_right{
+	position:relative;
+	z-index:90;
+	background-color: #fff;
+	left:15%;
+	top:-70%;
+	width:85%;
+	height:70%;
+	
+	
+overflow:auto;
+
+	
+}
+.div_dwon{
+	position:relative;
+	z-index:90;
+	top:-70%;
+	width:100%;
+	height:10%;
+	font-size: 15px;
+	text-align:center;
+	background-color: #FFECEC;
+}
+.emulations ul li{
+	position:relative;
+	left:-25%;
+}
+.tool ul li{
+	position:relative;
+	left:-25%;
+}
+.game_rom ul li{
+	position:relative;
+	left:-25%;
+}
+.web ul li{
+	position:relative;
+	left:-25%;
+}
+.div_right img{
+	width:50px;
+	height:50px;
+	-ms-transform-origin:20% 20%;
+	transition: all 0.6s; 
+}
+.div_right img:hover{
+	position:relative;
+ transform: scale(5);
+ 
+}
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers1 {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers1 td, #customers1 th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers1 tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers1 tr:hover {background-color: #ddd;}
+
+#customers1 th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
