@@ -4,6 +4,7 @@ psv游戏
    :maxdepth: 1
 
    psv/1
+   psv/2
 
 
    
