@@ -69,6 +69,8 @@ Partial Class Form14
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -105,25 +107,25 @@ Partial Class Form14
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(148, 22)
         Me.ToolStripMenuItem2.Text = "下载展示图"
         '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(148, 22)
         Me.ToolStripMenuItem3.Text = "下载卡带图"
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(148, 22)
         Me.ToolStripMenuItem4.Text = "下载视频"
         '
         '新建游戏信息ToolStripMenuItem
         '
         Me.新建游戏信息ToolStripMenuItem.Name = "新建游戏信息ToolStripMenuItem"
-        Me.新建游戏信息ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.新建游戏信息ToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
         Me.新建游戏信息ToolStripMenuItem.Text = "新建游戏信息"
         '
         'CheckBox1
@@ -488,12 +490,34 @@ Partial Class Form14
         Me.Button3.Text = "搜索"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(468, 133)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(47, 12)
+        Me.Label11.TabIndex = 37
+        Me.Label11.Text = "Label11"
+        Me.Label11.Visible = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(468, 157)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(47, 12)
+        Me.Label12.TabIndex = 38
+        Me.Label12.Text = "Label12"
+        Me.Label12.Visible = False
+        '
         'Form14
         '
         Me.AllowDrop = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(944, 761)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.TextBox8)
         Me.Controls.Add(Me.CheckBox9)
@@ -590,4 +614,6 @@ Partial Class Form14
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
     Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
 End Class

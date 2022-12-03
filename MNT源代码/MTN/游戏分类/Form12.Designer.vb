@@ -30,7 +30,6 @@ Partial Class Form12
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -82,18 +81,20 @@ Partial Class Form12
         '
         'Button3
         '
+        Me.Button3.Font = New System.Drawing.Font("微软雅黑", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Button3.Location = New System.Drawing.Point(30, 219)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(88, 40)
+        Me.Button3.Size = New System.Drawing.Size(131, 64)
         Me.Button3.TabIndex = 5
         Me.Button3.Text = "Button3"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(137, 219)
+        Me.Button4.Font = New System.Drawing.Font("微软雅黑", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Button4.Location = New System.Drawing.Point(178, 219)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(88, 40)
+        Me.Button4.Size = New System.Drawing.Size(134, 64)
         Me.Button4.TabIndex = 6
         Me.Button4.Text = "Button4"
         Me.Button4.UseVisualStyleBackColor = True
@@ -108,22 +109,13 @@ Partial Class Form12
         Me.Label4.Text = "Label4"
         Me.Label4.Visible = False
         '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(30, 386)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(78, 16)
-        Me.CheckBox1.TabIndex = 8
-        Me.CheckBox1.Text = "CheckBox1"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(246, 219)
+        Me.Button5.Font = New System.Drawing.Font("微软雅黑", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Button5.Location = New System.Drawing.Point(329, 219)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(88, 40)
-        Me.Button5.TabIndex = 9
+        Me.Button5.Size = New System.Drawing.Size(134, 64)
+        Me.Button5.TabIndex = 8
         Me.Button5.Text = "Button5"
         Me.Button5.UseVisualStyleBackColor = True
         '
@@ -133,7 +125,6 @@ Partial Class Form12
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(593, 440)
         Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
@@ -156,6 +147,5 @@ Partial Class Form12
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
     Friend WithEvents Button5 As System.Windows.Forms.Button
 End Class

@@ -1,24 +1,17 @@
 ﻿Imports System
 Imports System.IO
 
-Public Class Form14
+Public Class Form13
     Dim xmlnodes As Xml.XmlNodeList
     Dim xml_index As Integer = -1
-    Dim index_rom() As Integer
-    Dim 当前路径 As String
-    Dim pics_path_1 As String = ""
-    Dim s_vp_index As Integer = 0
-    Dim s_pic_index As Integer = 0
     Dim souh_index As Integer = -1
+    Dim 当前路径 As String
 
-    Private Sub Form14_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+    Private Sub Form13_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         ListBox1.Items.Clear()
         Me.Hide()
         Form3.Show()
     End Sub
-    Private Function file_f(ByVal str1 As String) As Boolean
-            file_f = My.Computer.FileSystem.FileExists(str1)
-    End Function
     Private Function file_img(ByVal str1 As String)
         Dim memoryStream_start As New MemoryStream()
         Using Fs As New System.IO.FileStream(str1, IO.FileMode.Open, IO.FileAccess.Read)
@@ -29,74 +22,17 @@ Public Class Form14
         End Using
 
     End Function
-    Private Function file_rom(ByVal str1 As String) As Boolean
-        If CheckBox9.Checked = False Then
-            file_rom = file_f(str1)
-        Else
-            file_rom = True
-        End If
-    End Function
-    Private Function file_video(ByVal str1 As String) As Boolean
-        If CheckBox4.Checked = False Then
-            file_video = file_f(str1)
-        Else
-            file_video = True
-        End If
-    End Function
-    Private Function file_cassette(ByVal str1 As String) As Boolean
-        If CheckBox6.Checked = False Then
-            file_cassette = file_f(str1)
-        Else
-            file_cassette = True
-        End If
-    End Function
-    Private Function file_theme(ByVal str1 As String) As Boolean
-        If CheckBox5.Checked = False Then
-            file_theme = file_f(str1)
-        Else
-            file_theme = True
-        End If
-    End Function
-    Private Function file_intro1(ByVal str1 As String) As Boolean
-        If CheckBox7.Checked = False Then
-            file_intro1 = file_f(str1)
-        Else
-            file_intro1 = True
-        End If
-    End Function
-    Private Function file_intro2(ByVal str1 As String) As Boolean
-        If CheckBox8.Checked = False Then
-            file_intro2 = file_f(str1)
-        Else
-            file_intro2 = True
-        End If
-    End Function
-    Private Sub Form14_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim index_re As Integer = 0
-        Dim game_name As String
-        Dim game_dr As String
-        Dim game_intro As String
+    Private Sub Form13_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         当前路径 = Application.StartupPath()
-
         Me.Width = SystemInformation.PrimaryMonitorSize.Width * 0.6
         Me.Height = SystemInformation.PrimaryMonitorSize.Height * 0.8
         xmlnodes = duxml(Label1.Text, "book")
         ListBox1.Width = 300
-        ListBox1.Height = Me.Height * 0.95
+        ListBox1.Height = Me.Height
         For i = 0 To xmlnodes.Count - 1
-            game_name = Path.GetFileNameWithoutExtension(xmlnodes(i).ChildNodes(0).InnerText)
-            game_dr = Path.GetDirectoryName(xmlnodes(i).ChildNodes(0).InnerText)
-            game_intro = game_dr + "\" + game_name + "\" + game_name + ".txt"
-            If (file_rom(xmlnodes(i).ChildNodes(0).InnerText) And file_video(xmlnodes(i).ChildNodes(2).InnerText) And file_cassette(xmlnodes(i).ChildNodes(3).InnerText) And _
-                 file_theme(xmlnodes(i).ChildNodes(4).InnerText) And file_intro1(xmlnodes(i).ChildNodes(6).InnerText) And file_intro2(game_intro)) Then
-            Else
-                ReDim Preserve index_rom(index_re)
-                index_rom(index_re) = i
-                ListBox1.Items.Add(xmlnodes(i).ChildNodes(1).InnerText)
-                index_re = index_re + 1
-            End If
+            ' MsgBox(xmlnodes(i).CloneNode(1).InnerText)
+            ListBox1.Items.Add(xmlnodes(i).ChildNodes(1).InnerText)
         Next
-
         'WebBrowser1.Location = New Point(winx * 0.8, 0)
         TextBox1.Location = New Point(306, 44)
         Panel1.Location = New Point(306, 71)
@@ -124,34 +60,27 @@ Public Class Form14
         Label6.Location = New Point(743, 247 + 50)
         TextBox7.Location = New Point(745, 425 + 50)
 
-        Panel7.Location = New Point(306, 501 + 50)
-
         TextBox8.Location = New Point(688, 10)
         Button3.Location = New Point(838, 8)
+
         Panel1.BackgroundImage = Image.FromFile("theme\file.jpg")
         Panel2.BackgroundImage = Image.FromFile("theme\file.jpg")
         Panel3.BackgroundImage = Image.FromFile("theme\file.jpg")
         Panel4.BackgroundImage = Image.FromFile("theme\file.jpg")
         Panel5.BackgroundImage = Image.FromFile("theme\file.jpg")
         Panel6.BackgroundImage = Image.FromFile("theme\file.jpg")
-        Panel7.BackgroundImage = Image.FromFile("theme\file.jpg")
-
         CheckBox1.Checked = False
         CheckBox2.Checked = False
         CheckBox3.Checked = False
         WebBrowser1.Navigate(Path.GetFullPath("theme\video.html"))
-
     End Sub
 
-    Private Sub ListBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles ListBox1.KeyDown
+  
 
+    Private Sub ListBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles ListBox1.KeyDown
         Dim xmldellist As Xml.XmlNodeList
         Dim yesno As Integer
         Dim ds As New DataSet
-        Dim index_re As Integer = 0
-        Dim game_name As String
-        Dim game_dr As String
-        Dim game_intro As String
         If (e.KeyCode = Keys.Delete) Then
             yesno = MsgBox("是否要删除", MsgBoxStyle.YesNo)
             If yesno = 6 Then
@@ -177,32 +106,14 @@ Public Class Form14
             xmlnodes = duxml(Label1.Text, "book")
             ListBox1.Items.Clear()
             For i = 0 To xmlnodes.Count - 1
-                game_name = Path.GetFileNameWithoutExtension(xmlnodes(i).ChildNodes(0).InnerText)
-                game_dr = Path.GetDirectoryName(xmlnodes(i).ChildNodes(0).InnerText)
-                game_intro = game_dr + "\" + game_name + "\" + game_name + ".txt"
-                If (file_rom(xmlnodes(i).ChildNodes(0).InnerText) And file_video(xmlnodes(i).ChildNodes(2).InnerText) And file_cassette(xmlnodes(i).ChildNodes(3).InnerText) And _
-                     file_theme(xmlnodes(i).ChildNodes(4).InnerText) And file_intro1(xmlnodes(i).ChildNodes(6).InnerText) And file_intro2(game_intro)) Then
-                Else
-                    ReDim Preserve index_rom(index_re)
-                    index_rom(index_re) = i
-                    ListBox1.Items.Add(xmlnodes(i).ChildNodes(1).InnerText)
-                    index_re = index_re + 1
-                End If
+                ' MsgBox(xmlnodes(i).CloneNode(1).InnerText)
+                ListBox1.Items.Add(xmlnodes(i).ChildNodes(1).InnerText)
             Next
 
-            If (Array.FindIndex(index_rom, Function(s) s = xml_index) <= ListBox1.Items.Count - 1 And Array.FindIndex(index_rom, Function(s) s = xml_index) >= 0) Then
-                Try
-                    ListBox1.SelectedIndex = Array.FindIndex(index_rom, Function(s) s = xml_index)
-                Catch ex As Exception
-                    ListBox1.SelectedIndex = -1
-                End Try
-
+            If (xml_index <= xmlnodes.Count - 1) Then
+                ListBox1.SelectedIndex = xml_index
             Else
-                Try
-                    ListBox1.SelectedIndex = 0
-                Catch ex As Exception
-                    ListBox1.SelectedIndex = -1
-                End Try
+                ListBox1.SelectedIndex = xmlnodes.Count - 1
             End If
             ds.ReadXml(Label1.Text)
             Form3.DataGridView2.DataSource = ds
@@ -212,18 +123,12 @@ Public Class Form14
 
 
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
-
         ' MsgBox(ListBox1.SelectedValue)
-        Dim game_name As String
-        Dim game_dr As String
-        Dim game_intro As String
-        xml_index = index_rom(ListBox1.SelectedIndex)
+
+        xml_index = ListBox1.SelectedIndex
         TextBox1.Text = ListBox1.Text
         TextBox2.Text = xmlnodes(xml_index).ChildNodes(0).InnerText
-        game_name = Path.GetFileNameWithoutExtension(TextBox2.Text)
-        game_dr = Path.GetDirectoryName(TextBox2.Text)
-        ' MsgBox(game_dr + "\" + game_name + "\" + game_name + ".txt")
-        game_intro = game_dr + "\" + game_name + "\" + game_name + ".txt"
+        TextBox6.Text = xmlnodes(xml_index).ChildNodes(2).InnerText
         If (TextBox2.Text <> "kong" And My.Computer.FileSystem.FileExists(TextBox2.Text)) Then
             Panel1.BackgroundImage = Image.FromFile("theme\file.jpg")
         Else
@@ -255,11 +160,6 @@ Public Class Form14
             Panel6.BackgroundImage = Image.FromFile("theme\file.jpg")
         Else
             Panel6.BackgroundImage = Image.FromFile("theme\file1.jpg")
-        End If
-        If (game_intro <> "kong" And My.Computer.FileSystem.FileExists(game_intro)) Then
-            Panel7.BackgroundImage = Image.FromFile("theme\file.jpg")
-        Else
-            Panel7.BackgroundImage = Image.FromFile("theme\file1.jpg")
         End If
 
     End Sub
@@ -518,10 +418,6 @@ Public Class Form14
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ds As New DataSet
-        Dim index_re As Integer = 0
-        Dim game_name As String
-        Dim game_dr As String
-        Dim game_intro As String
         If (xml_index = -1) Then
             MsgBox("未选择游戏")
         Else
@@ -542,27 +438,11 @@ Public Class Form14
             xmlnodes = duxml(Label1.Text, "book")
             ListBox1.Items.Clear()
             For i = 0 To xmlnodes.Count - 1
-                game_name = Path.GetFileNameWithoutExtension(xmlnodes(i).ChildNodes(0).InnerText)
-                game_dr = Path.GetDirectoryName(xmlnodes(i).ChildNodes(0).InnerText)
-                game_intro = game_dr + "\" + game_name + "\" + game_name + ".txt"
-                If (file_rom(xmlnodes(i).ChildNodes(0).InnerText) And file_video(xmlnodes(i).ChildNodes(2).InnerText) And file_cassette(xmlnodes(i).ChildNodes(3).InnerText) And _
-                     file_theme(xmlnodes(i).ChildNodes(4).InnerText) And file_intro1(xmlnodes(i).ChildNodes(6).InnerText) And file_intro2(game_intro)) Then
-                Else
-                    ReDim Preserve index_rom(index_re)
-                    index_rom(index_re) = i
-                    ListBox1.Items.Add(xmlnodes(i).ChildNodes(1).InnerText)
-                    index_re = index_re + 1
-                End If
+                ' MsgBox(xmlnodes(i).CloneNode(1).InnerText)
+                ListBox1.Items.Add(xmlnodes(i).ChildNodes(1).InnerText)
             Next
-            If (xml_index > 0 And Array.FindIndex(index_rom, Function(s) s = xml_index) >= 0) Then
-                Try
-                    ListBox1.SelectedIndex = Array.FindIndex(index_rom, Function(s) s = xml_index)
-                Catch ex As Exception
-                    ListBox1.SelectedIndex = -1
-                End Try
-
-            Else
-                ListBox1.SelectedIndex = 0
+            If (xml_index > 0) Then
+                ListBox1.SelectedIndex = xml_index
             End If
             ds.ReadXml(Label1.Text)
             Form3.DataGridView2.DataSource = ds
@@ -587,220 +467,7 @@ Public Class Form14
         Form3.Show()
     End Sub
 
-    Private Sub Panel7_DoubleClick(sender As Object, e As EventArgs) Handles Panel7.DoubleClick
-        Dim gl_rom_path As String = ""
-        gl_rom_path = TextBox2.Text
-            If (gl_rom_path <> "" And Path.GetExtension(gl_rom_path) <> ".xml") Then
-            Form10.Label1.Text = gl_rom_path
-            Form10.Label3.Text = "14"
-            Form10.Show()
-            Me.Hide()
-        End If
-    End Sub
-
-
-    Private Sub Label9_DoubleClick(sender As Object, e As EventArgs) Handles Label9.DoubleClick
-        Dim gl_rom_path As String = ""
-        gl_rom_path = TextBox2.Text
-        If (gl_rom_path <> "" And Path.GetExtension(gl_rom_path) <> ".xml") Then
-            Form10.Label1.Text = gl_rom_path
-            Form10.Show()
-            Me.Hide()
-        End If
-    End Sub
-
-    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
-        Dim s_pic_txt As String = ""
-        Dim s_pic_path As String = ""
-        If (My.Computer.FileSystem.FileExists(当前路径 + "\mtn_pv_index.exe")) Then
-
-
-            If (System.Diagnostics.Process.GetProcessesByName("mtn_stu").Length > 0) Then
-                MsgBox("只能打开一个搜图窗口")
-            Else
-                If (xml_index > -1) Then
-                    s_pic_txt = Path.GetFileNameWithoutExtension(TextBox2.Text)
-                    pics_path_1 = 当前路径 + "/rom/" + Form3.ComboBox1.Text + "/Photos/" + s_pic_txt + ".txt"
-                    s_pic_path = 当前路径 + "/rom/" + Form3.ComboBox1.Text + "/Photos/" + s_pic_txt + ".txt" + Chr(13)
-                    Call 建立文件夹(当前路径 + "/rom/" + Form3.ComboBox1.Text + "/Photos/")
-                    s_pic_index = xml_index.ToString + Chr(13)
-                    s_pic_path += TextBox1.Text + Chr(13)
-                    s_pic_path += 1.ToString + Chr(13)
-                    s_pic_path += 当前路径 + "/rom/" + Form3.ComboBox1.Text + "/Photos" + Chr(13)
-                    s_pic_path += s_pic_txt + Chr(13)
-                    s_pic_path += 当前路径 + "/rom/" + Form3.ComboBox1.Text + "/Photos" + Chr(13)
-                    s_pic_path += 1.ToString + Chr(13)
-                    s_pic_path += 当前路径 + "/" + Label1.Text + Chr(13)
-                    s_pic_path += 当前路径 + "/rom/" + Form3.ComboBox1.Text + "/thumb" + Chr(13)
-                    's_pic_txt = s_pic_path
-                    File.WriteAllText("pics.txt", s_pic_path)
-                    ShellExecute(0, "open", 当前路径 + "\mtn_pv_index.exe", "", "", 1)
-                    While System.Diagnostics.Process.GetProcessesByName("mtn_pv_index").Length < 0
-                    End While
-                    s_vp_index = 1
-                    Me.Timer1.Enabled = True
-                End If
-            End If
-
-        Else
-            Form12.Label4.Text = 3
-            Form12.Show()
-            Me.Hide()
-        End If
-    End Sub
-    Private Sub 建立文件夹(ByVal 文件夹名 As String)
-        If Not Directory.Exists(文件夹名) Then
-            Directory.CreateDirectory(文件夹名)
-        End If
-    End Sub
-
-    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
-        Dim s_picsp_txt As String = ""
-        Dim s_picsp_path As String = ""
-        If (My.Computer.FileSystem.FileExists(当前路径 + "\mtn_pv_index.exe")) Then
-
-            If (System.Diagnostics.Process.GetProcessesByName("mtn_stu").Length > 0) Then
-                MsgBox("只能打开一个下载窗口")
-            Else
-                If (xml_index > -1) Then
-                    s_picsp_txt = Path.GetFileNameWithoutExtension(TextBox2.Text)
-                    pics_path_1 = 当前路径 + "/rom/" + Form3.ComboBox1.Text + "/CPhotos/" + s_picsp_txt + ".txt"
-                    s_picsp_path = 当前路径 + "/rom/" + Form3.ComboBox1.Text + "/CPhotos/" + s_picsp_txt + ".txt" + Chr(13)
-                    Call 建立文件夹(当前路径 + "/rom/" + Form3.ComboBox1.Text + "/CPhotos/")
-                    s_pic_index = xml_index.ToString + Chr(13)
-                    s_picsp_path += TextBox1.Text + Chr(13)
-                    s_picsp_path += 3.ToString + Chr(13)
-                    s_picsp_path += 当前路径 + "/rom/" + Form3.ComboBox1.Text + "/CPhotos" + Chr(13)
-                    s_picsp_path += s_picsp_txt + Chr(13)
-                    s_picsp_path += 当前路径 + "/rom/" + Form3.ComboBox1.Text + "/CPhotos" + Chr(13)
-                    s_picsp_path += 2.ToString + Chr(13)
-                    s_picsp_path += 当前路径 + "/" + Label1.Text + Chr(13)
-                    s_picsp_path += 当前路径 + "/rom/" + Form3.ComboBox1.Text + "/cassette" + Chr(13)
-                    's_pic_txt = s_pic_path
-                    File.WriteAllText("pics.txt", s_picsp_path)
-
-                    ShellExecute(0, "open", 当前路径 + "\mtn_pv_index.exe", "", "", 1)
-                    While System.Diagnostics.Process.GetProcessesByName("mtn_pv_index").Length < 0
-                    End While
-                    s_vp_index = 3
-                    Me.Timer1.Enabled = True
-                End If
-            End If
-        Else
-            Form12.Label4.Text = 3
-            Form12.Show()
-            Me.Hide()
-        End If
-    End Sub
-
-    Private Sub 新建游戏信息ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 新建游戏信息ToolStripMenuItem.Click
-        Dim intro_filetxt_path As String
-        Dim intro_filetxt_name As String
-
-        Dim open_filetxt_index As Integer
-        If (xml_index > -1) Then
-            open_filetxt_index = xml_index
-            intro_filetxt_name = TextBox2.Text
-            intro_filetxt_name = Path.GetFileNameWithoutExtension(intro_filetxt_name)
-            intro_filetxt_path = "rom/" + Form3.ComboBox1.Text + "/intro"
-            建立文件夹(intro_filetxt_path)
-            If (My.Computer.FileSystem.FileExists(intro_filetxt_path + "/" + intro_filetxt_name + ".txt")) Then
-                ShellExecute(0, "open", 当前路径 + "/" + intro_filetxt_path + "/" + intro_filetxt_name + ".txt", "", "", 1)
-            Else
-                File.WriteAllText(当前路径 + "/" + intro_filetxt_path + "/" + intro_filetxt_name + ".txt", intro_filetxt_name)
-                ShellExecute(0, "open", 当前路径 + "/" + intro_filetxt_path + "/" + intro_filetxt_name + ".txt", "", "", 1)
-            End If
-            TextBox7.Text = intro_filetxt_path + "/" + intro_filetxt_name + ".txt"
-        End If
-    End Sub
-
-    Private Sub ToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem4.Click
-        Dim s_video_txt As String = ""
-        Dim s_video_path As String = ""
-        If (My.Computer.FileSystem.FileExists(当前路径 + "\mtn_pv_index.exe")) Then
-
-
-            If (System.Diagnostics.Process.GetProcessesByName("mtn_stu").Length > 0) Then
-                MsgBox("只能打开一个下载窗口")
-            Else
-                If (xml_index > -1) Then
-                    s_video_txt = Path.GetFileNameWithoutExtension(TextBox2.Text)
-                    pics_path_1 = 当前路径 + "/rom/" + Form3.ComboBox1.Text + "/video/" + s_video_txt + ".mp4"
-                    If My.Computer.FileSystem.FileExists(pics_path_1) Then
-                        MsgBox("视频已经存在")
-                    Else
-                        s_video_path = 当前路径 + "/rom/" + Form3.ComboBox1.Text + "/video/" + s_video_txt + ".txt" + Chr(13)
-                        Call 建立文件夹(当前路径 + "/rom/" + Form3.ComboBox1.Text + "/video/")
-                        s_pic_index = xml_index.ToString + Chr(13)
-                        s_video_path += TextBox1.Text + Chr(13)
-                        s_video_path += 5.ToString + Chr(13)
-                        s_video_path += 当前路径 + "/rom/" + Form3.ComboBox1.Text + "/video" + Chr(13)
-                        s_video_path += s_video_txt
-                        's_pic_txt = s_pic_path
-                        File.WriteAllText("pics.txt", s_video_path)
-                        ShellExecute(0, "open", "https://search.bilibili.com/all?vt=91666068&keyword=" + TextBox1.Text, "", "", 1)
-                        ShellExecute(0, "open", 当前路径 + "\mtn_pv_index.exe", "", "", 1)
-                        While System.Diagnostics.Process.GetProcessesByName("mtn_pv_index").Length < 0
-                        End While
-                        s_vp_index = 5
-                        Me.Timer1.Enabled = True
-                    End If
-                End If
-            End If
-        Else
-            Form12.Label4.Text = 3
-            Form12.Show()
-            Me.Hide()
-        End If
-    End Sub
-
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Dim pics_if As Integer = 0
-        If (System.Diagnostics.Process.GetProcessesByName("mtn_pv_index").Length > 0) Then
-
-        Else
-            Select Case s_vp_index
-                Case 1
-                    Dim pics_path_2 As String = ""
-                    pics_path_2 = Path.GetDirectoryName(Path.GetDirectoryName(pics_path_1)) + "\thumb\" + Path.GetFileNameWithoutExtension(pics_path_1) + ".png"
-                    If My.Computer.FileSystem.FileExists(pics_path_1) Then
-                        TextBox3.Text = pics_path_1.Replace(当前路径 + "/", "")
-                        Panel2.BackgroundImage = file_img(TextBox3.Text)
-                    ElseIf My.Computer.FileSystem.FileExists(pics_path_2) Then
-                        TextBox3.Text = pics_path_2.Replace(当前路径 + "\", "")
-                        Panel2.BackgroundImage = file_img(TextBox3.Text)
-                    End If
-                Case 2
-
-                Case 3
-                    Dim pics_path_2 As String = ""
-                    pics_path_2 = Path.GetDirectoryName(Path.GetDirectoryName(pics_path_1)) + "\cassette\" + Path.GetFileNameWithoutExtension(pics_path_1) + ".png"
-
-                    If My.Computer.FileSystem.FileExists(pics_path_1) Then
-                        TextBox5.Text = pics_path_1.Replace(当前路径 + "/", "")
-                        Panel5.BackgroundImage = file_img(TextBox5.Text)
-                    ElseIf My.Computer.FileSystem.FileExists(pics_path_2) Then
-                        TextBox5.Text = pics_path_2.Replace(当前路径 + "\", "")
-                        Panel5.BackgroundImage = file_img(TextBox5.Text)
-                    End If
-                Case 4
-
-                Case 5
-                    If My.Computer.FileSystem.FileExists(pics_path_1) Then
-                        TextBox6.Text = pics_path_1.Replace(当前路径 + "/", "")
-                        WebBrowser1.Document.All("bvid").SetAttribute("src", Path.GetFullPath(TextBox6.Text))
-                        Panel4.BackgroundImage = Image.FromFile("theme\file.jpg")
-                    End If
-
-            End Select
-            Me.Timer1.Enabled = False
-        End If
-    End Sub
-
-
-
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        ' Dim index_123 As Integer = -1
         If TextBox8.Text <> "" Then
             souh_index = ListBox1.FindString(TextBox8.Text, souh_index)
             If (souh_index > -1) Then
@@ -809,9 +476,216 @@ Public Class Form14
             End If
         End If
     End Sub
+    Private Sub ListBox1_DoubleClick(sender As Object, e As EventArgs) Handles ListBox1.DoubleClick
+        Dim s1 As String = ""
+        Dim mnq As String
+        Dim miname As String
+        Dim romp As String
+        Dim battxt As String
+        Dim 模拟器盘符 As String
+        Dim 模拟器p As String
+        Dim 模拟器rom As String
+        Dim 核心 As String
+        Dim cank As Boolean = False
 
+        Try
+
+
+            If (Label9.Text = "kong") Then
+
+                If (TextBox2.Text = "kong") Then
+                    MsgBox("未选中启动文件")
+                Else
+                    s1 = TextBox2.Text '游戏rom路径
+                    File.WriteAllText("pics.txt", s1)
+                    romp = TextBox2.Text
+                    If Path.GetExtension(s1) = ".xml" Then
+
+                    ElseIf (Path.GetExtension(s1) = "") Then
+                        ShellExecute(0, "open", s1, "", "", 1)
+                    ElseIf Path.GetDirectoryName(s1) = "http:" Or
+                           Path.GetDirectoryName(s1).Substring(0, 4) = "http" Or
+                           Path.GetDirectoryName(s1).Substring(0, 3) = "ftp" Then
+                        ShellExecute(0, "open", s1, "", "", 1)
+                    ElseIf Not My.Computer.FileSystem.FileExists(s1) Then
+                        MsgBox("游戏不存")
+                    Else
+                        mnq = romp
+                        miname = romp
+                        模拟器盘符 = System.IO.Path.GetDirectoryName(Path.GetFullPath(romp))
+                        模拟器p = romp
+                        battxt = " "
+                        miname = Path.GetFileName(miname)
+                        miname = miname.Replace(Path.GetExtension(miname), "")
+                        battxt = " "
+                        battxt += 模拟器盘符.Substring(0, 2) + Chr(13) + Chr(10)
+                        battxt += "cd" + Chr(32) + Chr(34) + 模拟器盘符 + Chr(34) + Chr(13) + Chr(10)
+                        battxt += "start" + Chr(32) + Chr(34) + Chr(34) + Chr(32) + Chr(34) + Path.GetFileName(模拟器p) + Chr(34)
+                        Dim LocaleID As Long
+                        LocaleID = GetSystemDefaultLCID()
+                        Select Case LocaleID
+                            Case &H404
+                                MsgBox("中文繁体")
+                                System.IO.File.WriteAllText(当前路径 + "\qidong.bat", battxt, System.Text.Encoding.GetEncoding("BIG5"))
+                            Case &H804
+                                ' MsgBox("中文简体")
+                                System.IO.File.WriteAllText(当前路径 + "\qidong.bat", battxt, System.Text.Encoding.GetEncoding("GB2312"))
+                            Case &H409
+                                System.IO.File.WriteAllText(当前路径 + "\qidong.bat", battxt, System.Text.Encoding.Default)
+                            Case Else
+                                System.IO.File.WriteAllText(当前路径 + "\qidong.bat", battxt, System.Text.Encoding.Default)
+                        End Select
+
+
+                        ShellExecute(0, "open", "qidong.bat", "", "", 1) '使用模拟器（MXL中）打开rom                     
+                    End If
+                End If
+
+
+
+
+
+            Else
+
+                s1 = TextBox2.Text '游戏rom路径
+                File.WriteAllText("pics.txt", s1)
+                romp = TextBox2.Text
+                模拟器rom = TextBox4.Text
+                If Path.GetExtension(s1) = ".xml" Then
+                    If My.Computer.FileSystem.FileExists(s1) Then
+
+                    End If
+                ElseIf Not My.Computer.FileSystem.FileExists(s1) Then                
+                    MsgBox("游戏不存")                
+                Else
+
+                    If (模拟器rom = "kong") Then
+                        mnq = Label9.Text
+                        miname = Label9.Text
+                        模拟器盘符 = System.IO.Path.GetDirectoryName(Path.GetFullPath(Label9.Text))
+                        模拟器p = Label9.Text
+                        核心 = Label10.Text
+
+                    ElseIf (System.IO.Path.GetExtension(模拟器rom) = ".dll") Then
+                        mnq = Label9.Text
+                        miname = Label9.Text
+                        模拟器盘符 = System.IO.Path.GetDirectoryName(Path.GetFullPath(Label9.Text))
+                        模拟器p = Label9.Text
+                        核心 = 模拟器rom
+                    ElseIf (Not My.Computer.FileSystem.FileExists(模拟器rom)) Then
+                        mnq = Label9.Text
+                        miname = Label9.Text
+                        模拟器盘符 = System.IO.Path.GetDirectoryName(Path.GetFullPath(Label9.Text))
+                        模拟器p = Label9.Text
+                        核心 = 模拟器rom
+                        cank = True
+                    Else
+                        mnq = Label9.Text
+                        miname = Label9.Text
+                        模拟器盘符 = System.IO.Path.GetDirectoryName(Path.GetFullPath(模拟器rom))
+                        模拟器p = 模拟器rom
+                        核心 = Label10.Text
+
+                    End If
+
+                    battxt = " "
+                    miname = Path.GetFileName(miname)
+                    miname = miname.Replace(Path.GetExtension(miname), "")
+
+
+                    If (miname = "retroarch") Then
+                        If (核心 = "kong") Then
+                            battxt = " "
+                            battxt += 模拟器盘符.Substring(0, 2) + Chr(13) + Chr(10)
+                            battxt += "cd" + Chr(32) + Chr(34) + 模拟器盘符 + Chr(34) + Chr(13) + Chr(10)
+                            battxt += "start" + Chr(32) + Path.GetFileName(模拟器p) + Chr(32)
+                        Else
+                            If (romp = "kong") Then
+                                battxt = " "
+                                battxt += 模拟器盘符.Substring(0, 2) + Chr(13) + Chr(10)
+                                battxt += "cd" + Chr(32) + Chr(34) + 模拟器盘符 + Chr(34) + Chr(13) + Chr(10)
+                                battxt += "start" + Chr(32) + Path.GetFileName(模拟器p) + Chr(32) + "-L" + Chr(32) + Path.GetFullPath(核心).Replace(模拟器盘符 + "\", "")
+
+                            Else
+                                battxt = " "
+                                battxt += 模拟器盘符.Substring(0, 2) + Chr(13) + Chr(10)
+                                battxt += "cd" + Chr(32) + Chr(34) + 模拟器盘符 + Chr(34) + Chr(13) + Chr(10)
+                                battxt += "start" + Chr(32) + Path.GetFileName(模拟器p) + Chr(32) + "-L" + Chr(32) + Path.GetFullPath(核心).Replace(模拟器盘符 + "\", "") + Chr(32)
+                                battxt += Chr(34) + Path.GetFullPath(romp) + Chr(34)
+                            End If
+                        End If
+
+                    ElseIf (romp = "kong") Then
+                        battxt = " "
+                        battxt += 模拟器盘符.Substring(0, 2) + Chr(13) + Chr(10)
+                        battxt += "cd" + Chr(32) + Chr(34) + 模拟器盘符 + Chr(34) + Chr(13) + Chr(10)
+                        battxt += "start" + Chr(32) + Path.GetFileName(模拟器p)
+
+                    ElseIf (miname = "mame") Then
+                        battxt = " "
+                        battxt += 模拟器盘符.Substring(0, 2) + Chr(13) + Chr(10)
+                        battxt += "cd" + Chr(32) + Chr(34) + 模拟器盘符 + Chr(34) + Chr(13) + Chr(10)
+                        battxt += "start" + Chr(32) + Path.GetFileName(模拟器p)
+                        battxt += " -rompath" + Chr(32) + Chr(34) + Path.GetDirectoryName(Path.GetFullPath(romp)) + Chr(34)
+                        battxt += Chr(32) + Path.GetFileName(romp)
+                    ElseIf (miname = "cmd") Then
+                        battxt = " "
+                        battxt += 模拟器盘符.Substring(0, 2) + Chr(13) + Chr(10)
+                        battxt += "cd" + Chr(32) + Chr(34) + 模拟器盘符 + Chr(34) + Chr(13) + Chr(10)
+                        battxt += "start" + Chr(32) + Path.GetFileName(模拟器p) + Chr(32) + "/k"
+                        battxt += Chr(32) + Chr(34) + Path.GetFullPath(romp) + Chr(34)
+                    ElseIf (miname = "fbneo" Or miname = "fbneo64") Then
+
+                        battxt = " "
+                        battxt += 模拟器盘符.Substring(0, 2) + Chr(13) + Chr(10)
+                        battxt += "cd" + Chr(32) + Chr(34) + 模拟器盘符 + Chr(34) + Chr(13) + Chr(10)
+                        battxt += "start" + Chr(32) + Path.GetFileName(模拟器p)
+                        battxt += Chr(32) + Chr(34) + Path.GetFileNameWithoutExtension(romp) + Chr(34)
+                        'battxt += Chr(32) + "-w"
+                    Else
+
+                        battxt = " "
+                        battxt += 模拟器盘符.Substring(0, 2) + Chr(13) + Chr(10)
+                        battxt += "cd" + Chr(32) + Chr(34) + 模拟器盘符 + Chr(34) + Chr(13) + Chr(10)
+                        battxt += "start" + Chr(32) + Path.GetFileName(模拟器p)
+
+                        battxt += Chr(32) + Chr(34) + Path.GetFullPath(romp) + Chr(34)
+
+                    End If
+                    If cank Then
+                        battxt += Chr(32) + 核心
+                    End If
+                    Dim LocaleID As Long
+                    LocaleID = GetSystemDefaultLCID()
+
+                    Select Case LocaleID
+                        Case &H404
+                            ' MsgBox("中文繁体")
+                            System.IO.File.WriteAllText(当前路径 + "\qidong.bat", battxt, System.Text.Encoding.GetEncoding("BIG5"))
+                        Case &H804
+                            ' MsgBox("中文简体")
+                            System.IO.File.WriteAllText(当前路径 + "\qidong.bat", battxt, System.Text.Encoding.GetEncoding("GB2312"))
+                        Case &H409
+                            System.IO.File.WriteAllText(当前路径 + "\qidong.bat", battxt, System.Text.Encoding.Default)
+                        Case Else
+                            System.IO.File.WriteAllText(当前路径 + "\qidong.bat", battxt, System.Text.Encoding.Default)
+                    End Select
+
+
+
+
+                    ShellExecute(0, "open", "qidong.bat", "", "", 1) '使用模拟器（MXL中）打开rom
+                   
+                End If
+            End If
+        Catch ex As Exception
+            ShellExecute(0, "open", s1, "", "", 1)
+
+            ' MsgBox("出现异常无法启动")
+        End Try
+        ' Me.WindowState = FormWindowState.Minimized '最小化窗口本来应该选择关闭的，这里只是测试
+    End Sub
     Private Sub TextBox8_TextChanged(sender As Object, e As EventArgs) Handles TextBox8.TextChanged
         souh_index = 0
-
     End Sub
 End Class

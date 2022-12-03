@@ -51,6 +51,8 @@ Partial Class Form13
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
@@ -324,12 +326,30 @@ Partial Class Form13
         Me.TextBox7.Size = New System.Drawing.Size(143, 21)
         Me.TextBox7.TabIndex = 25
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(838, 8)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(52, 22)
+        Me.Button3.TabIndex = 38
+        Me.Button3.Text = "搜索"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(688, 10)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(144, 21)
+        Me.TextBox8.TabIndex = 37
+        '
         'Form13
         '
         Me.AllowDrop = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(944, 761)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.TextBox8)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.WebBrowser1)
         Me.Controls.Add(Me.TextBox7)
@@ -396,4 +416,6 @@ Partial Class Form13
     Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
     Friend WithEvents WebBrowser1 As System.Windows.Forms.WebBrowser
     Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
 End Class

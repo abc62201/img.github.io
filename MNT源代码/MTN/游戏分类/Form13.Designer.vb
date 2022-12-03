@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form14
+Partial Class Form13
     Inherits System.Windows.Forms.Form
 
     'Form 重写 Dispose，以清理组件列表。
@@ -22,14 +22,8 @@ Partial Class Form14
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.新建游戏信息ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
@@ -57,22 +51,12 @@ Partial Class Form14
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.ContextMenuStrip1.SuspendLayout()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        Me.Panel7.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -87,7 +71,6 @@ Partial Class Form14
         '
         'ListBox1
         '
-        Me.ListBox1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.ListBox1.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.ItemHeight = 25
@@ -96,40 +79,10 @@ Partial Class Form14
         Me.ListBox1.Size = New System.Drawing.Size(300, 554)
         Me.ListBox1.TabIndex = 1
         '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.ToolStripMenuItem4, Me.新建游戏信息ToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(149, 92)
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
-        Me.ToolStripMenuItem2.Text = "下载展示图"
-        '
-        'ToolStripMenuItem3
-        '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
-        Me.ToolStripMenuItem3.Text = "下载卡带图"
-        '
-        'ToolStripMenuItem4
-        '
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(152, 22)
-        Me.ToolStripMenuItem4.Text = "下载视频"
-        '
-        '新建游戏信息ToolStripMenuItem
-        '
-        Me.新建游戏信息ToolStripMenuItem.Name = "新建游戏信息ToolStripMenuItem"
-        Me.新建游戏信息ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.新建游戏信息ToolStripMenuItem.Text = "新建游戏信息"
-        '
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(548, 12)
+        Me.CheckBox1.Location = New System.Drawing.Point(306, 12)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(120, 16)
         Me.CheckBox1.TabIndex = 2
@@ -139,7 +92,7 @@ Partial Class Form14
         'CheckBox2
         '
         Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(674, 12)
+        Me.CheckBox2.Location = New System.Drawing.Point(432, 12)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(96, 16)
         Me.CheckBox2.TabIndex = 3
@@ -149,7 +102,7 @@ Partial Class Form14
         'CheckBox3
         '
         Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(776, 12)
+        Me.CheckBox3.Location = New System.Drawing.Point(534, 12)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(138, 16)
         Me.CheckBox3.TabIndex = 4
@@ -197,7 +150,7 @@ Partial Class Form14
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(771, 550)
+        Me.Button2.Location = New System.Drawing.Point(768, 521)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(120, 33)
         Me.Button2.TabIndex = 8
@@ -375,135 +328,52 @@ Partial Class Form14
         Me.TextBox7.Size = New System.Drawing.Size(143, 21)
         Me.TextBox7.TabIndex = 25
         '
-        'Panel7
+        'Button3
         '
-        Me.Panel7.AllowDrop = True
-        Me.Panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel7.Controls.Add(Me.Label9)
-        Me.Panel7.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Panel7.Location = New System.Drawing.Point(306, 501)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(144, 154)
-        Me.Panel7.TabIndex = 27
+        Me.Button3.Location = New System.Drawing.Point(838, 8)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(52, 22)
+        Me.Button3.TabIndex = 38
+        Me.Button3.Text = "搜索"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(688, 10)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(144, 21)
+        Me.TextBox8.TabIndex = 37
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("微软雅黑", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.Red
-        Me.Label9.Location = New System.Drawing.Point(24, 37)
+        Me.Label9.Location = New System.Drawing.Point(483, 87)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(96, 56)
-        Me.Label9.TabIndex = 26
-        Me.Label9.Text = "双击编辑" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "游戏攻略"
-        '
-        'CheckBox4
-        '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(751, 550)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(48, 16)
-        Me.CheckBox4.TabIndex = 28
-        Me.CheckBox4.Text = "视频"
-        Me.CheckBox4.UseVisualStyleBackColor = True
+        Me.Label9.Size = New System.Drawing.Size(41, 12)
+        Me.Label9.TabIndex = 39
+        Me.Label9.Text = "Label9"
+        Me.Label9.Visible = False
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("微软雅黑", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label10.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label10.Location = New System.Drawing.Point(746, 499)
+        Me.Label10.Location = New System.Drawing.Point(483, 108)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(145, 25)
-        Me.Label10.TabIndex = 29
-        Me.Label10.Text = "筛选缺失的资源"
+        Me.Label10.Size = New System.Drawing.Size(47, 12)
+        Me.Label10.TabIndex = 40
+        Me.Label10.Text = "Label10"
+        Me.Label10.Visible = False
         '
-        'CheckBox5
-        '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(843, 550)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(60, 16)
-        Me.CheckBox5.TabIndex = 30
-        Me.CheckBox5.Text = "展示图"
-        Me.CheckBox5.UseVisualStyleBackColor = True
-        '
-        'CheckBox6
-        '
-        Me.CheckBox6.AutoSize = True
-        Me.CheckBox6.Location = New System.Drawing.Point(751, 586)
-        Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(60, 16)
-        Me.CheckBox6.TabIndex = 31
-        Me.CheckBox6.Text = "卡带图"
-        Me.CheckBox6.UseVisualStyleBackColor = True
-        '
-        'CheckBox7
-        '
-        Me.CheckBox7.AutoSize = True
-        Me.CheckBox7.Location = New System.Drawing.Point(843, 586)
-        Me.CheckBox7.Name = "CheckBox7"
-        Me.CheckBox7.Size = New System.Drawing.Size(48, 16)
-        Me.CheckBox7.TabIndex = 32
-        Me.CheckBox7.Text = "信息"
-        Me.CheckBox7.UseVisualStyleBackColor = True
-        '
-        'CheckBox8
-        '
-        Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.Location = New System.Drawing.Point(751, 626)
-        Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(72, 16)
-        Me.CheckBox8.TabIndex = 33
-        Me.CheckBox8.Text = "游戏攻略"
-        Me.CheckBox8.UseVisualStyleBackColor = True
-        '
-        'CheckBox9
-        '
-        Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.Location = New System.Drawing.Point(843, 626)
-        Me.CheckBox9.Name = "CheckBox9"
-        Me.CheckBox9.Size = New System.Drawing.Size(42, 16)
-        Me.CheckBox9.TabIndex = 34
-        Me.CheckBox9.Text = "rom"
-        Me.CheckBox9.UseVisualStyleBackColor = True
-        '
-        'Timer1
-        '
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Location = New System.Drawing.Point(307, 10)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(144, 21)
-        Me.TextBox8.TabIndex = 35
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(457, 10)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(52, 22)
-        Me.Button3.TabIndex = 36
-        Me.Button3.Text = "搜索"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Form14
+        'Form13
         '
         Me.AllowDrop = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(944, 761)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.TextBox8)
-        Me.Controls.Add(Me.CheckBox9)
-        Me.Controls.Add(Me.CheckBox8)
-        Me.Controls.Add(Me.CheckBox7)
-        Me.Controls.Add(Me.CheckBox6)
-        Me.Controls.Add(Me.CheckBox5)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.CheckBox4)
-        Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.WebBrowser1)
         Me.Controls.Add(Me.TextBox7)
@@ -531,15 +401,12 @@ Partial Class Form14
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.Label1)
         Me.KeyPreview = True
-        Me.Name = "Form14"
-        Me.Text = "Form14"
-        Me.ContextMenuStrip1.ResumeLayout(False)
+        Me.Name = "Form13"
+        Me.Text = "Form13"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        Me.Panel7.ResumeLayout(False)
-        Me.Panel7.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -573,21 +440,8 @@ Partial Class Form14
     Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
     Friend WithEvents WebBrowser1 As System.Windows.Forms.WebBrowser
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
-    Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem4 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Panel7 As System.Windows.Forms.Panel
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents CheckBox4 As System.Windows.Forms.CheckBox
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents CheckBox5 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox6 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox7 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox8 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox9 As System.Windows.Forms.CheckBox
-    Friend WithEvents 新建游戏信息ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Timer1 As System.Windows.Forms.Timer
-    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
     Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
 End Class

@@ -4,6 +4,7 @@ Imports System.IO
 Public Class Form13
     Dim xmlnodes As Xml.XmlNodeList
     Dim xml_index As Integer = -1
+    Dim souh_index As Integer = -1
 
     Private Sub Form13_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         ListBox1.Items.Clear()
@@ -56,6 +57,10 @@ Public Class Form13
         Panel6.Location = New Point(745, 271 + 50)
         Label6.Location = New Point(743, 247 + 50)
         TextBox7.Location = New Point(745, 425 + 50)
+
+        TextBox8.Location = New Point(688, 10)
+        Button3.Location = New Point(838, 8)
+
         Panel1.BackgroundImage = Image.FromFile("theme\file.jpg")
         Panel2.BackgroundImage = Image.FromFile("theme\file.jpg")
         Panel3.BackgroundImage = Image.FromFile("theme\file.jpg")
@@ -456,5 +461,19 @@ Public Class Form13
         ListBox1.Items.Clear()
         Me.Hide()
         Form3.Show()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        If TextBox8.Text <> "" Then
+            souh_index = ListBox1.FindString(TextBox8.Text, souh_index)
+            If (souh_index > -1) Then
+                ListBox1.SelectedIndex = souh_index
+                souh_index = souh_index + 1
+            End If
+        End If
+    End Sub
+
+    Private Sub TextBox8_TextChanged(sender As Object, e As EventArgs) Handles TextBox8.TextChanged
+        souh_index = 0
     End Sub
 End Class

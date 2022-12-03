@@ -167,7 +167,7 @@ Public Class Form2
     Dim web_color(7) As String
     Dim joytype As String
     Dim joy_drive As String
-
+    Dim ie11_xian As Integer = 0
 
 
 
@@ -348,9 +348,9 @@ Public Class Form2
         joyso = 首尾删除空格(joyso)
         joytype = 首尾删除空格(joytype)
         joy_drive = 首尾删除空格(joy_drive)
-
         next1 = 首尾删除空格(next1)
         next2 = 首尾删除空格(next2)
+
         ' ku = ku.Replace(Chr(10), "")
         ku = 首尾删除空格(ku)
         kd = 首尾删除空格(kd)
@@ -708,7 +708,6 @@ Public Class Form2
         Dim 核心 As String
         Dim cank As Boolean = False
         WritePrivateProfileString("Startup file", "list", txt, 当前路径 + "\config.ini")
-
         Try
 
 
@@ -718,7 +717,6 @@ Public Class Form2
                     MsgBox("未选中启动文件")
                 Else
                     s1 = xmllist(xiang).ChildNodes(0).InnerText '游戏rom路径
-                    File.WriteAllText("pics.txt", s1)
                     romp = xmllist(xiang).ChildNodes(0).InnerText
                     If Path.GetExtension(s1) = ".xml" Then
 
@@ -742,16 +740,8 @@ Public Class Form2
                         If yesno = 6 Then
                             d_rom_name = text_处理(xmllist(xiang).ChildNodes(1).InnerText)
                             File.WriteAllText(当前路径 + "\dws.txt", d_rom_name)
-                            If (My.Computer.FileSystem.FileExists(当前路径 + "\download.exe")) Then
-                                ShellExecute(0, "open", "download.exe", "", "", 1)
-                                End
-
-                            Else
-                                WebBrowser1.Document.InvokeScript("jingyin")
-                                Form12.Label4.Text = 2
-                                Form12.Show()
-                                Me.Hide()
-                            End If
+                            ShellExecute(0, "open", "download.exe", "", "", 1)
+                            End
                         End If
                     Else
 
@@ -826,7 +816,6 @@ Public Class Form2
             Else
 
                 s1 = xmllist(xiang).ChildNodes(0).InnerText '游戏rom路径
-                File.WriteAllText("pics.txt", s1)
                 romp = xmllist(xiang).ChildNodes(0).InnerText
 
                 模拟器rom = xmllist(xiang).ChildNodes(5).InnerText
@@ -845,16 +834,8 @@ Public Class Form2
                     If yesno = 6 Then
                         d_rom_name = text_处理(xmllist(xiang).ChildNodes(1).InnerText)
                         File.WriteAllText(当前路径 + "\dws.txt", d_rom_name)
-                        If (My.Computer.FileSystem.FileExists(当前路径 + "\download.exe")) Then
-                            ShellExecute(0, "open", "download.exe", "", "", 1)
-                            End
-
-                        Else
-                            WebBrowser1.Document.InvokeScript("jingyin")
-                            Form12.Label4.Text = 2
-                            Form12.Show()
-                            Me.Hide()
-                        End If
+                        ShellExecute(0, "open", "download.exe", "", "", 1)
+                        End
                     End If
                 Else
 
@@ -1046,12 +1027,10 @@ Public Class Form2
         End
     End Sub
     Public Sub dwie11()
-        Dim jiance As String
-        jiance = New String(CChar(" "), 128)
-        GetPrivateProfileString("Startup file", "detection", "detection", jiance, 128, 当前路径 + "\config.ini")
-        jiance = 首尾删除空格(jiance)
-        If jiance = "0" Then
+        If ie11_xian = 0 Then
             WebBrowser1.Document.InvokeScript("jingyin")
+
+            ie11_xian = ie11_xian + 1
             Form12.Label4.Text = 2
             Form12.Show()
             Me.Hide()
@@ -1917,18 +1896,12 @@ Public Class Form2
         Dim joyzt As String = "joy_empty"
         Dim result As Integer
         Dim infoJEx As JOYINFOEX
-        Dim joy_id_index As Integer = 0
         With infoJEx
             .dwSize = Marshal.SizeOf(GetType(JOYINFOEX))
             .dwFlags = CInt(JOY_RETURNBUTTONS)
         End With
         If (joytype <> "2") Then
-            Try
-                joy_id_index = CInt(joy_drive)
-            Catch ex As Exception
-                joy_id_index = 0
-            End Try
-            result = joyGetPosEx(joy_id_index, infoJEx) '返回JOYERR_NOERROR(值为0)
+            result = joyGetPosEx(CInt(joy_drive), infoJEx) '返回JOYERR_NOERROR(值为0)
             If result = 0 Then
                 If (joytype = "0") Then
                     If (infoJEx.dwPOV = 0) Then

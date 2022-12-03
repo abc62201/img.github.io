@@ -143,6 +143,8 @@ Public Class Form14
 
     End Sub
 
+
+
     Private Sub ListBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles ListBox1.KeyDown
 
         Dim xmldellist As Xml.XmlNodeList
@@ -809,7 +811,217 @@ Public Class Form14
             End If
         End If
     End Sub
+    Private Sub ListBox1_DoubleClick(sender As Object, e As EventArgs) Handles ListBox1.DoubleClick
+        Dim s1 As String = ""
+        Dim mnq As String
+        Dim miname As String
+        Dim romp As String
+        Dim battxt As String
+        Dim 模拟器盘符 As String
+        Dim 模拟器p As String
+        Dim 模拟器rom As String
+        Dim 核心 As String
+        Dim cank As Boolean = False
 
+        Try
+
+
+            If (Label11.Text = "kong") Then
+
+                If (TextBox2.Text = "kong") Then
+                    MsgBox("未选中启动文件")
+                Else
+                    s1 = TextBox2.Text '游戏rom路径
+                    File.WriteAllText("pics.txt", s1)
+                    romp = TextBox2.Text
+                    If Path.GetExtension(s1) = ".xml" Then
+
+   
+                    ElseIf (Path.GetExtension(s1) = "") Then
+                        ShellExecute(0, "open", s1, "", "", 1)
+                    ElseIf Path.GetDirectoryName(s1) = "http:" Or
+                           Path.GetDirectoryName(s1).Substring(0, 4) = "http" Or
+                           Path.GetDirectoryName(s1).Substring(0, 3) = "ftp" Then
+                        ShellExecute(0, "open", s1, "", "", 1)
+                    ElseIf Not My.Computer.FileSystem.FileExists(s1) Then
+                        MsgBox("游戏不存在")
+                    Else
+                        mnq = romp
+                        miname = romp
+                        模拟器盘符 = System.IO.Path.GetDirectoryName(Path.GetFullPath(romp))
+                        模拟器p = romp
+                        battxt = " "
+                        miname = Path.GetFileName(miname)
+                        miname = miname.Replace(Path.GetExtension(miname), "")
+                        battxt = " "
+                        battxt += 模拟器盘符.Substring(0, 2) + Chr(13) + Chr(10)
+                        battxt += "cd" + Chr(32) + Chr(34) + 模拟器盘符 + Chr(34) + Chr(13) + Chr(10)
+                        battxt += "start" + Chr(32) + Chr(34) + Chr(34) + Chr(32) + Chr(34) + Path.GetFileName(模拟器p) + Chr(34)
+                        Dim LocaleID As Long
+                        LocaleID = GetSystemDefaultLCID()
+                        Select Case LocaleID
+                            Case &H404
+                                MsgBox("中文繁体")
+                                System.IO.File.WriteAllText(当前路径 + "\qidong.bat", battxt, System.Text.Encoding.GetEncoding("BIG5"))
+                            Case &H804
+                                ' MsgBox("中文简体")
+                                System.IO.File.WriteAllText(当前路径 + "\qidong.bat", battxt, System.Text.Encoding.GetEncoding("GB2312"))
+                            Case &H409
+                                System.IO.File.WriteAllText(当前路径 + "\qidong.bat", battxt, System.Text.Encoding.Default)
+                            Case Else
+                                System.IO.File.WriteAllText(当前路径 + "\qidong.bat", battxt, System.Text.Encoding.Default)
+                        End Select
+
+                        ShellExecute(0, "open", "qidong.bat", "", "", 1) '使用模拟器（MXL中）打开rom                       
+                    End If
+                End If
+            Else
+
+                s1 = TextBox2.Text '游戏rom路径
+                File.WriteAllText("pics.txt", s1)
+                romp = TextBox2.Text
+
+                模拟器rom = TextBox4.Text
+                If Path.GetExtension(s1) = ".xml" Then
+                    If My.Computer.FileSystem.FileExists(s1) Then
+
+                    End If
+                ElseIf Not My.Computer.FileSystem.FileExists(s1) Then
+                    MsgBox("游戏不存在")
+                Else
+
+
+
+
+
+                    If (模拟器rom = "kong") Then
+                        mnq = Label11.Text
+                        miname = Label11.Text
+                        模拟器盘符 = System.IO.Path.GetDirectoryName(Path.GetFullPath(Label11.Text))
+                        模拟器p = Label11.Text
+                        核心 = Label12.Text
+
+                    ElseIf (System.IO.Path.GetExtension(模拟器rom) = ".dll") Then
+                        mnq = Label11.Text
+                        miname = Label11.Text
+                        模拟器盘符 = System.IO.Path.GetDirectoryName(Path.GetFullPath(Label11.Text))
+                        模拟器p = Label11.Text
+                        核心 = 模拟器rom
+                    ElseIf (Not My.Computer.FileSystem.FileExists(模拟器rom)) Then
+                        mnq = Label11.Text
+                        miname = Label11.Text
+                        模拟器盘符 = System.IO.Path.GetDirectoryName(Path.GetFullPath(Label11.Text))
+                        模拟器p = Label11.Text
+                        核心 = 模拟器rom
+                        cank = True
+                    Else
+                        mnq = 模拟器rom
+                        miname = 模拟器rom
+                        模拟器盘符 = System.IO.Path.GetDirectoryName(Path.GetFullPath(模拟器rom))
+                        模拟器p = 模拟器rom
+                        核心 = Label12.Text
+
+                    End If
+
+
+
+
+                    battxt = " "
+                    miname = Path.GetFileName(miname)
+                    miname = miname.Replace(Path.GetExtension(miname), "")
+
+
+                    If (miname = "retroarch") Then
+                        If (核心 = "kong") Then
+                            battxt = " "
+                            battxt += 模拟器盘符.Substring(0, 2) + Chr(13) + Chr(10)
+                            battxt += "cd" + Chr(32) + Chr(34) + 模拟器盘符 + Chr(34) + Chr(13) + Chr(10)
+                            battxt += "start" + Chr(32) + Path.GetFileName(模拟器p) + Chr(32)
+                        Else
+                            If (romp = "kong") Then
+                                battxt = " "
+                                battxt += 模拟器盘符.Substring(0, 2) + Chr(13) + Chr(10)
+                                battxt += "cd" + Chr(32) + Chr(34) + 模拟器盘符 + Chr(34) + Chr(13) + Chr(10)
+                                battxt += "start" + Chr(32) + Path.GetFileName(模拟器p) + Chr(32) + "-L" + Chr(32) + Path.GetFullPath(核心).Replace(模拟器盘符 + "\", "")
+
+                            Else
+                                battxt = " "
+                                battxt += 模拟器盘符.Substring(0, 2) + Chr(13) + Chr(10)
+                                battxt += "cd" + Chr(32) + Chr(34) + 模拟器盘符 + Chr(34) + Chr(13) + Chr(10)
+                                battxt += "start" + Chr(32) + Path.GetFileName(模拟器p) + Chr(32) + "-L" + Chr(32) + Path.GetFullPath(核心).Replace(模拟器盘符 + "\", "") + Chr(32)
+                                battxt += Chr(34) + Path.GetFullPath(romp) + Chr(34)
+                            End If
+                        End If
+
+                    ElseIf (romp = "kong") Then
+                        battxt = " "
+                        battxt += 模拟器盘符.Substring(0, 2) + Chr(13) + Chr(10)
+                        battxt += "cd" + Chr(32) + Chr(34) + 模拟器盘符 + Chr(34) + Chr(13) + Chr(10)
+                        battxt += "start" + Chr(32) + Path.GetFileName(模拟器p)
+
+                    ElseIf (miname = "mame") Then
+                        battxt = " "
+                        battxt += 模拟器盘符.Substring(0, 2) + Chr(13) + Chr(10)
+                        battxt += "cd" + Chr(32) + Chr(34) + 模拟器盘符 + Chr(34) + Chr(13) + Chr(10)
+                        battxt += "start" + Chr(32) + Path.GetFileName(模拟器p)
+                        battxt += " -rompath" + Chr(32) + Chr(34) + Path.GetDirectoryName(Path.GetFullPath(romp)) + Chr(34)
+                        battxt += Chr(32) + Path.GetFileName(romp)
+                    ElseIf (miname = "cmd") Then
+                        battxt = " "
+                        battxt += 模拟器盘符.Substring(0, 2) + Chr(13) + Chr(10)
+                        battxt += "cd" + Chr(32) + Chr(34) + 模拟器盘符 + Chr(34) + Chr(13) + Chr(10)
+                        battxt += "start" + Chr(32) + Path.GetFileName(模拟器p) + Chr(32) + "/k"
+                        battxt += Chr(32) + Chr(34) + Path.GetFullPath(romp) + Chr(34)
+                    ElseIf (miname = "fbneo" Or miname = "fbneo64") Then
+
+                        battxt = " "
+                        battxt += 模拟器盘符.Substring(0, 2) + Chr(13) + Chr(10)
+                        battxt += "cd" + Chr(32) + Chr(34) + 模拟器盘符 + Chr(34) + Chr(13) + Chr(10)
+                        battxt += "start" + Chr(32) + Path.GetFileName(模拟器p)
+                        battxt += Chr(32) + Chr(34) + Path.GetFileNameWithoutExtension(romp) + Chr(34)
+                        'battxt += Chr(32) + "-w"
+                    Else
+
+                        battxt = " "
+                        battxt += 模拟器盘符.Substring(0, 2) + Chr(13) + Chr(10)
+                        battxt += "cd" + Chr(32) + Chr(34) + 模拟器盘符 + Chr(34) + Chr(13) + Chr(10)
+                        battxt += "start" + Chr(32) + Path.GetFileName(模拟器p)
+
+                        battxt += Chr(32) + Chr(34) + Path.GetFullPath(romp) + Chr(34)
+
+                    End If
+                    If cank Then
+                        battxt += Chr(32) + 核心
+                    End If
+                    Dim LocaleID As Long
+                    LocaleID = GetSystemDefaultLCID()
+
+                    Select Case LocaleID
+                        Case &H404
+                            ' MsgBox("中文繁体")
+                            System.IO.File.WriteAllText(当前路径 + "\qidong.bat", battxt, System.Text.Encoding.GetEncoding("BIG5"))
+                        Case &H804
+                            ' MsgBox("中文简体")
+                            System.IO.File.WriteAllText(当前路径 + "\qidong.bat", battxt, System.Text.Encoding.GetEncoding("GB2312"))
+                        Case &H409
+                            System.IO.File.WriteAllText(当前路径 + "\qidong.bat", battxt, System.Text.Encoding.Default)
+                        Case Else
+                            System.IO.File.WriteAllText(当前路径 + "\qidong.bat", battxt, System.Text.Encoding.Default)
+                    End Select
+
+
+
+                    ShellExecute(0, "open", "qidong.bat", "", "", 1) '使用模拟器（MXL中）打开rom
+                   
+                End If
+            End If
+        Catch ex As Exception
+            ShellExecute(0, "open", s1, "", "", 1)
+
+            ' MsgBox("出现异常无法启动")
+        End Try
+        ' Me.WindowState = FormWindowState.Minimized '最小化窗口本来应该选择关闭的，这里只是测试
+    End Sub
     Private Sub TextBox8_TextChanged(sender As Object, e As EventArgs) Handles TextBox8.TextChanged
         souh_index = 0
 
