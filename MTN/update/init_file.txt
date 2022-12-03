@@ -1,0 +1,10 @@
+http://host195361.hk2016110.lfeee.pw/MTN
+version.txt
+全部文件
+update/mtn_full_file.txt
+必须程序
+update/mtn_file.txt
+资源下载工具
+update/mtn_tool1.txt
+上传下载工具
+update/mtn_tool2.txt

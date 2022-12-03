@@ -1,91 +1,29 @@
-; File order list for solid archiving
-;
-; Here you may modify the file list which tells RAR the order in which
-; to add files to a solid archive.
-;
-; This file may contain file names, wildcards and a special entry - $default.
-; The default entry defines the position in the order list for files not
-; matched with other entries in this file. Lines beginning with the semicolon
-; symbol ';' are considered as comments and not processed.
-;
-; Place this file in the same directory as RAR.EXE.
-;
-; Tips to provide improved compression and speed of operation:
-;
-; - files containing similar information should be grouped together in the
-;   archive if possible;
-; - frequently accessed files should be placed at the beginning.
-;
-file_id.diz
-descript.ion
-read.*
-readme.*
-*.nfo
-*.doc
-*.txt
-*.htm
-*.html
-*.shtml
-*.css
-*.xsl
-*.xml
-*.js
-*.php
-*.lst
-*.log
-*.ini
-*.bat
-*.cmd
-*.h
-*.hpp
-*.c
-*.cpp
-*.java
-*.asm
-*.bas
-*.bak
-*.cue
-*.rtf
-*.hlp
-*.inf
-*.com
-*.exe
-*.dll
-*.obj
-*.lib
-*.sys
-*.drv
-*.bin
-*.bmp
-*.wav
-$default
-*.mp3
-*.mp4
-*.m4a
-*.mov
-*.avi
-*.wmv
-*.wma
-*.gif
-*.tif
-*.png
-*.jpg
-*.chm
-*.pdf
-*.cab
-*.7z
-*.arj
-*.ha
-*.lz
-*.lzh
-*.rar
-*.zip
-*.gz
-*.bz2
-*.xz
-*.jar
-*.fla
-*.flac
-*.ape
-*.bik
-*.mkv
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title>404 - File or directory not found.</title>
+<style type="text/css">
+<!--
+body{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}
+fieldset{padding:0 15px 10px 15px;} 
+h1{font-size:2.4em;margin:0;color:#FFF;}
+h2{font-size:1.7em;margin:0;color:#CC0000;} 
+h3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} 
+#header{width:96%;margin:0 0 0 0;padding:6px 2% 6px 2%;font-family:"trebuchet MS", Verdana, sans-serif;color:#FFF;
+background-color:#555555;}
+#content{margin:0 0 0 2%;position:relative;}
+.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}
+-->
+</style>
+</head>
+<body>
+<div id="header"><h1>Server Error</h1></div>
+<div id="content">
+ <div class="content-container"><fieldset>
+  <h2>404 - File or directory not found.</h2>
+  <h3>The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.</h3>
+ </fieldset></div>
+</div>
+</body>
+</html>
