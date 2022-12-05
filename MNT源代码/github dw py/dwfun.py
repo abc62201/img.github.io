@@ -5,7 +5,6 @@ from tqdm import tqdm
 from bs4 import BeautifulSoup
 from requests_toolbelt import  *
 import time  
-
   
   
 def download(url, file_path):
@@ -43,3 +42,29 @@ def download1(url: str, fname: str):
         for data in resp.iter_content(chunk_size=1024):
             size = file.write(data)
             bar.update(size)
+#关闭一打开的通过文件名程序
+def kill(pid):
+    # 本函数用于中止传入pid所对应的进程
+    if os.name == 'nt':
+        # Windows系统
+        cmd = 'taskkill /pid ' + str(pid) + ' /f'
+        try:
+            os.system(cmd)
+            #print(pid, 'killed')
+        except Exception as e:
+           # print(e)
+           pass
+    elif os.name == 'posix':
+        # Linux系统
+        cmd = 'kill ' + str(pid)
+        try:
+            os.system(cmd)
+           # print(pid, 'killed')
+        except Exception as e:
+            pass
+           # print(e)
+    else:
+        pass
+       # print('Undefined os.name')
+
+kill('shezhi.exe')

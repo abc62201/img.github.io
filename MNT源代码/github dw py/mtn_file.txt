@@ -7,6 +7,7 @@ shezhi.exe.txt=>shezhi.exe.config
 jincheng.exe
 MTN.exe
 shezhi.exe
+abc.exe
 双击注册浏览器.txt=>双击注册浏览器.reg
 CameraDll.dll
 dll/MTN.exe

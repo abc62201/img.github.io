@@ -4,6 +4,8 @@
    :maxdepth: 1
 
    pc/1
+   pc/2
+   pc/3
 
 
    

@@ -4605,6 +4605,8 @@ joy_zhao:
 
     Private Sub 替换当前资料ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 替换当前资料ToolStripMenuItem.Click
         If (Me.ComboBox1.SelectedIndex > -1) Then
+            Form13.Label9.Text = DataGridView1.Rows(Me.ComboBox1.SelectedIndex).Cells(1).Value
+            Form13.Label10.Text = DataGridView1.Rows(Me.ComboBox1.SelectedIndex).Cells(9).Value
             Form13.Label1.Text = liebiao
             Me.Hide()
             Form13.Show()
@@ -4613,6 +4615,8 @@ joy_zhao:
 
     Private Sub 查看缺失资源的游戏ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 查看缺失资源的游戏ToolStripMenuItem.Click
         If (Me.ComboBox1.SelectedIndex > -1) Then
+            Form14.Label11.Text = DataGridView1.Rows(Me.ComboBox1.SelectedIndex).Cells(1).Value
+            Form14.Label12.Text = DataGridView1.Rows(Me.ComboBox1.SelectedIndex).Cells(9).Value
             Form14.Label1.Text = liebiao
             Me.Hide()
             Form14.Show()

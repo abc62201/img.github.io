@@ -11,9 +11,12 @@ Public Class Form10
         If Label3.Text = "3" Then
             Form3.Show()
         ElseIf Label3.Text = "14" Then
+            'MsgBox("a")
+            Console.WriteLine("aaa")
             Form14.Show()
-        End If
 
+        End If
+        Console.WriteLine(Label3.Text)
 
     End Sub
     Private Sub Form10_Load(sender As Object, e As EventArgs) Handles MyBase.Load

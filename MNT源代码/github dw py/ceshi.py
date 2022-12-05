@@ -13,6 +13,12 @@ txt_file_txt=file_text_n(txt_file_path)
 url=txt_file_txt[0]
 version=current_path+'/'+txt_file_txt[1]
 txt_filefull_txt=current_path+'/'+txt_file_txt[3]
+#更新前先关闭相关软件
+kill('shezhi.exe')
+kill('jincheng.exe')
+kill('mtn_pv_index.exe')
+kill('MTN.exe')
+kill('abc.exe')
 #选则下载程序
 for i in range(4, len(txt_file_txt), 1):
     if i%2==0:
