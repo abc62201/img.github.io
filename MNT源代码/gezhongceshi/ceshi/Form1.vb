@@ -1,4 +1,8 @@
 ﻿Imports System.Xml
+Imports System.Text
+Imports System.Net
+Imports System.IO
+
 Public Class Form1
     Public doc As New Xml.XmlDocument
     Dim nodes As Xml.XmlNodeList
@@ -30,13 +34,33 @@ Public Class Form1
     End Function
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim xmlnodes As Xml.XmlNodeList
-        doc.Load("./rss_Down_r16.xml")
-        xmlnodes = doc.GetElementsByTagName("channel")
-        nodes = doc.GetElementsByTagName("item")
-        For Each nobe In nodes
-            Console.WriteLine(nobe("description").ChildNodes(0).Count)
-        Next
-        Console.WriteLine(xmlnodes(0).ChildNodes(2).InnerText)
+
+        Dim addr As String = "https://image.baidu.com/search/acjson"
+        Dim poststring As String = "tn=resultjson_com&word=魂斗罗&pn=0"
+        addr &= "?" & poststring
+        Try
+            Dim myWebRequest As WebRequest = WebRequest.Create(addr)
+            myWebRequest.ContentType = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 Edg/104.0.1293.63"
+            myWebRequest.Method = "GET"
+            Dim myWebresponse As WebResponse = myWebRequest.GetResponse
+
+            Dim mystream As Stream = myWebresponse.GetResponseStream
+
+            Dim singleReadCount As Integer = 10240
+            Dim mybyte(singleReadCount - 1) As Byte
+            Dim strpagecontent As String = ""
+
+            Dim intreadl As Integer = 0
+            Do
+                intreadl = mystream.Read(mybyte, 0, singleReadCount)
+                strpagecontent &= Encoding.UTF8.GetString(mybyte, 0, intreadl) 'Encoding.GetEncoding("gb2312").GetString(mybyte, 0, intreadl)
+            Loop While intreadl > 0
+
+            Console.WriteLine(strpagecontent)
+            mystream.Close()
+            myWebresponse.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 End Class

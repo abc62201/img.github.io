@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ 
+  <title>一个简单的数字时钟</title>
+  <script type="text/javascript" charset="utf-8">
+   // 定义一个函数用以显示当前时间
+   function displayTime() {
+    var elt = document.getElementById("clock"); // 通过id= "clock"找到元素
+    var now = new Date(); // 得到当前时间
+	var now = new Date();
+				var year = now.getFullYear(); //获取年份
+				var month = now.getMonth(); //获取月份
+				var date = now.getDate(); //获取日期
+				var day = now.getDay(); //获取星期
+				var hour = now.getHours(); //获取小时
+				var minute = now.getMinutes(); //获取分钟
+				var seconds = now.getSeconds(); //获取秒
+				month = month + 1;
+				var arr_week = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+				var week = arr_week[day];
+				  if(hour<10){
+    hour = "0" + hour
+  }
+  if(minute<10){
+    minute = "0" + minute
+  }
+  if(seconds<10){
+    seconds = "0" + seconds
+  }
+				var time =  hour + ":" + minute + ":" + seconds;
+				elt.innerHTML = time;
+    //elt.innerHTML = now.toLocaleTimeString(); //让elt来显示它
+    setTimeout(displayTime,1000); //在1秒后再次执行
+   }
+   window.onload = displayTime; //当onload事件发生时开始显示时间
+  </script>
+  <style type="text/css" media="all">
+   #clock {
+    font: bold 24pt sans;  
+	color:#f00;  
+   }
+  </style>
+ </head>
+ <body>
+ <div style="width:500px;height:500px;background:url(about.jpg)no-repeat;background-size: 100% 100%;">
+  <span id="clock"></span>
+  </div>
+ </body>
+</html>

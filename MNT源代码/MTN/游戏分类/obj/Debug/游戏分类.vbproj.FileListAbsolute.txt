@@ -1,1 +1,2 @@
 E:\github\MNT源代码\MTN\游戏分类\bin\Debug\MTN.exe.config
+E:\github\MNT源代码\MTN\游戏分类\bin\Debug\shezhi.exe.config
