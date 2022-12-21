@@ -37,7 +37,6 @@ Partial Class Form14
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -196,15 +195,6 @@ Partial Class Form14
         Me.Button1.TabIndex = 7
         Me.Button1.Text = "保存"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(771, 550)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(120, 33)
-        Me.Button2.TabIndex = 8
-        Me.Button2.Text = "取消"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'TextBox2
         '
@@ -545,7 +535,6 @@ Partial Class Form14
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Panel1)
@@ -576,7 +565,6 @@ Partial Class Form14
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog

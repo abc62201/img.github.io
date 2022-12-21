@@ -40,7 +40,7 @@ Public Class Form13
         CheckBox2.Location = New Point(432, 12)
         CheckBox3.Location = New Point(534, 12)
         Button1.Location = New Point(307, Me.Height * 0.9)
-        Button2.Location = New Point(768, Me.Height * 0.9)
+
         Label2.Location = New Point(25, 25)
         Panel2.Location = New Point(548, 71)
         Label3.Location = New Point(546, 47)
@@ -467,11 +467,7 @@ Public Class Form13
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        ListBox1.Items.Clear()
-        Me.Hide()
-        Form3.Show()
-    End Sub
+ 
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         If TextBox8.Text <> "" Then
