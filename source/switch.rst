@@ -4,6 +4,7 @@ switch游戏
    :maxdepth: 1
 
    switch/1
+   switch/2
 
 
    
