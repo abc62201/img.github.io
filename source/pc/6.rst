@@ -9,3 +9,18 @@
 密码 nE7jA%5m 
 
 点击确认登录按钮，即可进入天翼网关超级管理员界面。
+
+sql注入攻击 (用户登录)
+-----------------------------
+
+通过在sql语句中,注入单引号,来改变sql语句结构::
+
+    user
+    id        username  password
+    007     Jack          123
+
+    用户名:   Lucy
+    密码:     1' or '1'='1
+
+    select * from user where username='   Jack   ' and password='   123                   ';
+    select * from user where username='   Lucy   ' and password='   1' or '1'='1        ';

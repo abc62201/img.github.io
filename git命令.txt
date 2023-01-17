@@ -57,3 +57,14 @@ https://docutils.sourceforge.io/docs/ref/rst/directives.html#admonitions
 
 软件更新程序
 https://blog.csdn.net/DXJLSFB139/article/details/126400012
+
+gitee网址
+https://gitee.com/
+
+office订阅和管理地址
+365开发者订阅（中文）：https://developer.microsoft.com/zh-CN/microsoft-365/dev-program
+进不去进英文版：https://developer.microsoft.com/en-us/microsoft-365/dev-program
+office 365管理页：https://www.office.com
+
+onedrive下载网部署
+https://vercel.com/abc62201/onedrive-vercel-index/deployments
